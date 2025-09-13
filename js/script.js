@@ -1,138 +1,72 @@
-(function($){
-  // Search
-  var $searchWrap = $('#search-form-wrap'),
-    isSearchAnim = false,
-    searchAnimDuration = 200;
 
-  var startSearchAnim = function(){
-    isSearchAnim = true;
-  };
+document.addEventListener('DOMContentLoaded', function () {
+  const navMenu = document.querySelector('.nav-menu');
+  const menuButton = document.querySelector('.menu-button');
 
-  var stopSearchAnim = function(callback){
-    setTimeout(function(){
-      isSearchAnim = false;
-      callback && callback();
-    }, searchAnimDuration);
-  };
-
-  $('.nav-search-btn').on('click', function(){
-    if (isSearchAnim) return;
-
-    startSearchAnim();
-    $searchWrap.addClass('on');
-    stopSearchAnim(function(){
-      $('.search-form-input').focus();
-    });
+  // 點擊下拉菜單按鈕顯示/隱藏菜單
+  menuButton.addEventListener('click', (event) => {
+    event.stopPropagation(); // 阻止事件冒泡
+    navMenu.classList.toggle('show'); // 切換顯示狀態
   });
 
-  $('.search-form-input').on('blur', function(){
-    startSearchAnim();
-    $searchWrap.removeClass('on');
-    stopSearchAnim();
+  // 點擊其他地方隱藏下拉菜單
+  document.addEventListener('click', () => {
+    navMenu.classList.remove('show'); // 隱藏選單
   });
+  
 
-  // Share
-  $('body').on('click', function(){
-    $('.article-share-box.on').removeClass('on');
-  }).on('click', '.article-share-link', function(e){
-    e.stopPropagation();
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
 
-    var $this = $(this),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      id = 'article-share-box-' + $this.attr('data-id'),
-      title = $this.attr('data-title'),
-      offset = $this.offset();
+  menuToggle.addEventListener('click', function() {
+    // 切換菜單的顯示狀態
+    mobileNav.classList.toggle('active');
+  });
+});
 
-    if ($('#' + id).length){
-      var box = $('#' + id);
 
-      if (box.hasClass('on')){
-        box.removeClass('on');
-        return;
+
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+
+  // 當頁面滾動時顯示/隱藏按鈕
+  window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) { // 當滾動超過 300px 顯示按鈕
+          scrollToTopBtn.style.display = 'block';
+      } else {
+          scrollToTopBtn.style.display = 'none';
       }
-    } else {
-      var html = [
-        '<div id="' + id + '" class="article-share-box">',
-          '<input class="article-share-input" value="' + url + '">',
-          '<div class="article-share-links">',
-            '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"><span class="fa fa-twitter"></span></a>',
-            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"><span class="fa fa-facebook"></span></a>',
-            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"><span class="fa fa-pinterest"></span></a>',
-            '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' + encodedUrl + '" class="article-share-linkedin" target="_blank" title="LinkedIn"><span class="fa fa-linkedin"></span></a>',
-          '</div>',
-        '</div>'
-      ].join('');
-
-      var box = $(html);
-
-      $('body').append(box);
-    }
-
-    $('.article-share-box.on').hide();
-
-    box.css({
-      top: offset.top + 25,
-      left: offset.left
-    }).addClass('on');
-  }).on('click', '.article-share-box', function(e){
-    e.stopPropagation();
-  }).on('click', '.article-share-box-input', function(){
-    $(this).select();
-  }).on('click', '.article-share-box-link', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
   });
 
-  // Caption
-  $('.article-entry').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox') || $(this).parent().is('a')) return;
-
-      var alt = this.alt;
-
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-
-      $(this).wrap('<a href="' + this.src + '" data-fancybox=\"gallery\" data-caption="' + alt + '"></a>')
-    });
-
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
+  // 當點擊按鈕時，滾動到頁面頂部
+  scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+});
 
-  if ($.fancybox){
-    $('.fancybox').fancybox();
+
+//cursor滑鼠的特效
+document.addEventListener('mousemove', function(e) {
+  const cursorEffect = document.getElementById('cursor-effect');
+  const scrollbarWidth = 12; // 根據你的滾動條寬度設置
+  const proximityToBottom = 50; // 接近底部的距離閾值
+
+  // 檢查滑鼠是否在滾動條範圍內
+  const isOverScrollbar = (e.pageX > window.innerWidth - scrollbarWidth - 50);
+  // 檢查滑鼠是否接近網頁底部
+  const isNearBottom = (window.innerHeight - e.pageY < proximityToBottom);
+
+  if (isOverScrollbar || isNearBottom) {
+    cursorEffect.style.opacity = 0; // 隱藏特效
+  } else {
+    cursorEffect.style.left = (e.pageX + 3) + 'px'; // 向右偏移 3 像素
+    cursorEffect.style.top = (e.pageY + 10) + 'px'; // 向下偏移 10 像素
+    cursorEffect.style.opacity = 1; // 顯示特效
   }
+});
 
-  // Mobile nav
-  var $container = $('#container'),
-    isMobileNavAnim = false,
-    mobileNavAnimDuration = 200;
-
-  var startMobileNavAnim = function(){
-    isMobileNavAnim = true;
-  };
-
-  var stopMobileNavAnim = function(){
-    setTimeout(function(){
-      isMobileNavAnim = false;
-    }, mobileNavAnimDuration);
-  }
-
-  $('#main-nav-toggle').on('click', function(){
-    if (isMobileNavAnim) return;
-
-    startMobileNavAnim();
-    $container.toggleClass('mobile-nav-on');
-    stopMobileNavAnim();
-  });
-
-  $('#wrap').on('click', function(){
-    if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
-
-    $container.removeClass('mobile-nav-on');
-  });
-})(jQuery);
+// 當滑鼠移開時隱藏特效
+document.addEventListener('mouseleave', function() {
+  const cursorEffect = document.getElementById('cursor-effect');
+  cursorEffect.style.opacity = 0; // 隱藏特效
+});
