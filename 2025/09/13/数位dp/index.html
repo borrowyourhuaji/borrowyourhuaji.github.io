@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>数位dp | meow~</title>
+  <meta name="description" content="数位统计 DP（Digit DP）详细解析 数位统计 DP（Digit Dynamic Programming，简称 Digit DP）是一种基于动态规划的算法技术，广泛应用于 ACM 竞赛、算法设计和计数问题中。它主要用于解决与数字的位数相关的计数问题，例如统计某个范围内满足特定条件的整数个数。数位 DP 特别适合处理大范围（如 ( 10^{18} )）的计数问题，通过逐位构造数字并结合动态规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数位dp">
+<meta property="og:url" content="https://borrowyourhuaji.github.io/2025/09/13/%E6%95%B0%E4%BD%8Ddp/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数位统计 DP（Digit DP）详细解析 数位统计 DP（Digit Dynamic Programming，简称 Digit DP）是一种基于动态规划的算法技术，广泛应用于 ACM 竞赛、算法设计和计数问题中。它主要用于解决与数字的位数相关的计数问题，例如统计某个范围内满足特定条件的整数个数。数位 DP 特别适合处理大范围（如 ( 10^{18} )）的计数问题，通过逐位构造数字并结合动态规划">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-09-13T15:00:51.000Z">
+<meta property="article:modified_time" content="2025-09-13T15:01:40.205Z">
+<meta property="article:author" content="borrowyourhuaji">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://borrowyourhuaji.github.io/2025/09/13/%E6%95%B0%E4%BD%8Ddp/index.html">
+  
+  
+    <link rel="icon" href="/favicon.gif" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/images/4%20(1).gif" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">borrowyourhuaji</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">😋</h3>
+        <small id="sign" class="text-muted hidden-xs hidden-sm"> 时而滑稽之，不亦说乎？</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <img src="/favicon.gif" alt="?">
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/" rel="tag">文档、库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/" style="font-size: 13px;">文档、库</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px;">算法</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/%E6%95%B0%E4%BD%8Ddp/" class="title">数位dp</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T15:00:51.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/yolo/" class="title">yolo</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T13:57:08.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="title">线段树</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T12:57:08.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="title">动态规划</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T11:16:41.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-数位dp" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数位dp
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/09/13/%E6%95%B0%E4%BD%8Ddp/" class="article-date">
+	  <time datetime="2025-09-13T15:00:51.000Z" itemprop="datePublished">2025-09-13</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+  </span>
+
+
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="%E6%95%B0%E4%BD%8D%E7%BB%9F%E8%AE%A1-dp%EF%BC%88digit-dp%EF%BC%89%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90%E6%95%B0%E4%BD%8D%E7%BB%9F%E8%AE%A1-dp%EF%BC%88digit-dynamic-programming%EF%BC%8C%E7%AE%80%E7%A7%B0-digit-dp%EF%BC%89%E6%98%AF%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8E%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9A%84%E7%AE%97%E6%B3%95%E6%8A%80%E6%9C%AF%EF%BC%8C%E5%B9%BF%E6%B3%9B%E5%BA%94%E7%94%A8%E4%BA%8E-acm-%E7%AB%9E%E8%B5%9B%E3%80%81%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%92%8C%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%E4%B8%AD%E3%80%82%E5%AE%83%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%B8%8E%E6%95%B0%E5%AD%97%E7%9A%84%E4%BD%8D%E6%95%B0%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BE%8B%E5%A6%82%E7%BB%9F%E8%AE%A1%E6%9F%90%E4%B8%AA%E8%8C%83%E5%9B%B4%E5%86%85%E6%BB%A1%E8%B6%B3%E7%89%B9%E5%AE%9A%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%95%B4%E6%95%B0%E4%B8%AA%E6%95%B0%E3%80%82%E6%95%B0%E4%BD%8D-dp-%E7%89%B9%E5%88%AB%E9%80%82%E5%90%88%E5%A4%84%E7%90%86%E5%A4%A7%E8%8C%83%E5%9B%B4%EF%BC%88%E5%A6%82-(-10%5E%7B18%7D-)%EF%BC%89%E7%9A%84%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%EF%BC%8C%E9%80%9A%E8%BF%87%E9%80%90%E4%BD%8D%E6%9E%84%E9%80%A0%E6%95%B0%E5%AD%97%E5%B9%B6%E7%BB%93%E5%90%88%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%81%BF%E5%85%8D%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE%E3%80%82" tabindex="-1">数位统计 DP（Digit DP）详细解析<br>
+数位统计 DP（Digit Dynamic Programming，简称 Digit DP）是一种基于动态规划的算法技术，广泛应用于 <strong>ACM 竞赛</strong>、算法设计和计数问题中。它主要用于解决与数字的位数相关的计数问题，例如统计某个范围内满足特定条件的整数个数。数位 DP 特别适合处理大范围（如 ( 10^{18} )）的计数问题，通过逐位构造数字并结合动态规划避免暴力枚举。</h2>
+<h2 id="1.-%E6%95%B0%E4%BD%8D%E7%BB%9F%E8%AE%A1-dp-%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5" tabindex="-1">1. 数位统计 DP 的基本概念</h2>
+<h3 id="1.1-%E5%AE%9A%E4%B9%89" tabindex="-1">1.1 定义</h3>
+<p>数位 DP 是一种用于统计某个范围内整数个数（或满足特定条件的数字）的动态规划方法，通常问题形式如下：</p>
+<ul>
+<li>给定一个范围 ([L, R])（例如 ( L, R \leq 10^{18} )）。</li>
+<li>要求统计 ([L, R]) 内满足特定条件的整数个数，例如：
+<ul>
+<li>数字的各位之和为某个值（如和为 ( K )）。</li>
+<li>数字中不含某位（如不含 4）。</li>
+<li>数字是某个数的倍数（如是 3 的倍数）。</li>
+<li>数字的各位满足某种模式（如单调递增）。</li>
+</ul>
+</li>
+<li><strong>目标</strong>：
+<ul>
+<li>计算满足条件的整数个数。</li>
+<li>（可选）输出满足条件的数字。</li>
+</ul>
+</li>
+<li><strong>输出</strong>：
+<ul>
+<li>满足条件的整数个数（可能需要模 ( 10^9+7 )）。</li>
+<li>（可选）一个或多个满足条件的数字。<br>
+<strong>示例</strong>：</li>
+</ul>
+</li>
+<li>输入：( L = 1, R = 100 )，条件：数字的各位之和是 5。</li>
+<li>满足条件的数字：
+<ul>
+<li>5（( 5 = 5 )）</li>
+<li>14（( 1 + 4 = 5 )）</li>
+<li>23（( 2 + 3 = 5 )）</li>
+<li>32（( 3 + 2 = 5 )）</li>
+<li>41（( 4 + 1 = 5 )）</li>
+<li>50（( 5 + 0 = 5 )）</li>
+</ul>
+</li>
+<li>输出：6（满足条件的数字个数）。</li>
+<li>答案计算：统计 ([1, 100]) 内各位之和为 5 的数字个数，通常用 ( f® - f(L-1) )，其中 ( f(x) ) 表示 ( [1, x] ) 内满足条件的数字个数。<br>
+<strong>关键特点</strong>：</li>
+<li><strong>逐位构造</strong>：从高位到低位逐位确定数字，动态维护状态。</li>
+<li><strong>范围处理</strong>：通过 ( f® - f(L-1) ) 计算 ([L, R]) 的答案。</li>
+<li><strong>状态压缩</strong>：用 DP 状态记录前缀信息（如当前数字、前缀和、模数等）。</li>
+<li><strong>记忆化</strong>：避免重复计算重叠子问题。</li>
+<li><strong>大范围适用</strong>：适合 ( R \leq 10^{18} )，暴力枚举不可行。</li>
+</ul>
+<h3 id="1.2-%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B" tabindex="-1">1.2 数学模型</h3>
+<ul>
+<li><strong>输入</strong>：
+<ul>
+<li>范围：( L, R )（整数，( 1 \leq L \leq R \leq 10^{18} )）。</li>
+<li>条件：数字的性质（例如，各位之和、模 ( K )、不含某位）。</li>
+</ul>
+</li>
+<li><strong>目标</strong>：
+<ul>
+<li>计算 ([L, R]) 内满足条件的整数个数 ( C )。</li>
+<li>通常通过 ( f® - f(L-1) )，其中 ( f(x) ) 是 ( [1, x] ) 内满足条件的个数。</li>
+</ul>
+</li>
+<li><strong>输出</strong>：
+<ul>
+<li>( C )（整数，可能模 ( 10^9+7 )）。</li>
+<li>（可选）满足条件的数字。</li>
+</ul>
+</li>
+<li><strong>约束</strong>：
+<ul>
+<li>数字范围大（( 10^{18} )），需高效算法。</li>
+<li>条件基于数字的位（十进制或二进制）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1.3-%E4%B8%8E%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%AF%B9%E6%AF%94" tabindex="-1">1.3 与其他问题的对比</h3>
+<table>
+<thead>
+<tr>
+<th><strong>问题</strong></th>
+<th><strong>定义</strong></th>
+<th><strong>Goal</strong></th>
+<th><strong>DP 状态</strong></th>
+<th><strong>Complexity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数位 DP</td>
+<td>统计范围内满足位数条件的整数个数</td>
+<td>满足条件的个数</td>
+<td>( dp[pos][state] ): 第 pos 位的状态</td>
+<td>( O(\log R \cdot S) )</td>
+</tr>
+<tr>
+<td>子集和</td>
+<td>集合中找子集和为 T</td>
+<td>判断是否存在子集</td>
+<td>( dp[i][s] ): 前 i 个元素和为 s</td>
+<td>( O(n \times T) )</td>
+</tr>
+<tr>
+<td>布尔括号</td>
+<td>加括号使布尔表达式为 True 的方案数</td>
+<td>True 方案数</td>
+<td>( dp[i][j][b] ): 子表达式 [i:j] 为 b</td>
+<td>( O(n^3) )</td>
+</tr>
+<tr>
+<td>矩阵链乘法</td>
+<td>确定矩阵乘法顺序，最小化乘法次数</td>
+<td>最小乘法次数</td>
+<td>( dp[i][j] ): 子链 [i:j] 最小代价</td>
+<td>( O(n^3) )</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>数位 DP vs 子集和</strong>：
+<ul>
+<li>数位 DP：基于数字位，计数问题。</li>
+<li>子集和：基于集合，存在性问题。</li>
+</ul>
+</li>
+<li><strong>数位 DP vs 布尔括号</strong>：
+<ul>
+<li>数位 DP：逐位构造，范围计数。</li>
+<li>布尔括号：区间 DP，括号计数。</li>
+</ul>
+</li>
+<li><strong>数位 DP vs 矩阵链乘法</strong>：
+<ul>
+<li>数位 DP：数字位优化，计数。</li>
+<li>矩阵链乘法：乘法顺序优化，最小代价。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1.4-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF" tabindex="-1">1.4 应用场景</h3>
+<ul>
+<li><strong>ACM 竞赛</strong>：
+<ul>
+<li>计数问题：Codeforces 1036C（Classy Numbers）。</li>
+<li>模运算：AtCoder ABC 162F（Digits）。</li>
+<li>路径恢复：SPOJ NDIGITS（输出数字）。</li>
+<li>变种：HDU 4352（XHXJ’s LIS，数位 DP + 状态压缩）。</li>
+</ul>
+</li>
+<li><strong>实际应用</strong>：
+<ul>
+<li>密码学：统计满足条件的数字（如模 ( K )）。</li>
+<li>数据库：范围查询优化。</li>
+<li>数据分析：数字模式统计。</li>
+<li>编码：数字编码方案计数。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2.-%E6%95%B0%E4%BD%8D-dp-%E7%9A%84%E8%A7%A3%E6%B3%95" tabindex="-1">2. 数位 DP 的解法</h2>
+<p>数位 DP 通过逐位构造数字并维护状态，结合动态规划解决计数问题。以下详细讲解主要解法：记忆化递归、动态规划、路径恢复。</p>
+<h3 id="2.1-%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92%EF%BC%88%E6%A0%87%E5%87%86%E6%95%B0%E4%BD%8D-dp%EF%BC%89" tabindex="-1">2.1 记忆化递归（标准数位 DP）</h3>
+<ul>
+<li><strong>思路</strong>：
+<ul>
+<li>将数字从高位到低位逐位构造，记录当前状态（如当前位、是否贴近上界、前缀和等）。</li>
+<li>使用记忆化递归避免重复计算。</li>
+<li>计算 ( f(x) )，即 ( [1, x] ) 内满足条件的数字个数。</li>
+<li>答案为 ( f® - f(L-1) ).</li>
+</ul>
+</li>
+<li><strong>状态定义</strong>：
+<ul>
+<li>( dp[pos][state] )：从第 ( pos ) 位开始构造，当前状态为 ( state )，满足条件的数字个数。</li>
+<li>常见状态：
+<ul>
+<li>( pos ): 当前处理的位（从高到低）。</li>
+<li>( tight ): 是否贴近上界（1: 必须 ≤ 当前位的数字，0: 可取 0-9）。</li>
+<li>( sum ): 前缀数字之和（若条件是和为 ( K )）。</li>
+<li>( mod ): 前缀模 ( K )（若条件是 ( K ) 的倍数）。</li>
+<li>( lead ): 是否允许前导零（1: 允许，0: 不允许）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>状态转移</strong>：
+<ul>
+<li>对于第 ( pos ) 位：
+<ul>
+<li>若 ( tight = 1 )，可选数字 ( d \in [0, \text{digit[pos]}] ).</li>
+<li>若 ( tight = 0 )，可选数字 ( d \in [0, 9] ).</li>
+<li>新状态：
+<ul>
+<li>( new_tight = 1 ) 若 ( d = \text{digit[pos]} ) 且 ( tight = 1 )，否则 0。</li>
+<li>更新 ( sum, mod, lead ) 等状态。</li>
+</ul>
+</li>
+<li>递归到下一位：<br>
+[<br>
+dp[pos][state] = \sum_{d} dp[pos+1][new_state]<br>
+]</li>
+</ul>
+</li>
+<li>终止条件：
+<ul>
+<li>( pos = \text{len(digits)} )，检查是否满足条件（如 ( sum = K )）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>初始调用</strong>：
+<ul>
+<li>( solve(0, 1, 0, 1) )，表示从第 0 位开始，贴近上界，无前缀和，允许前导零。</li>
+</ul>
+</li>
+<li><strong>复杂度</strong>：
+<ul>
+<li>时间：( O(\log R \cdot S) )，其中 ( S ) 是状态数（如 ( 10 \cdot K )）。</li>
+<li>空间：( O(\log R \cdot S) )，记忆化表格。</li>
+</ul>
+</li>
+<li><strong>适用性</strong>：ACM 竞赛标配，适合 ( R \leq 10^{18} )，时间 ≥ 1 秒。</li>
+</ul>
+<h3 id="2.2-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" tabindex="-1">2.2 动态规划</h3>
+<ul>
+<li><strong>思路</strong>：
+<ul>
+<li>将记忆化递归转为递推形式，填充 DP 表格。</li>
+<li>从低位到高位迭代，状态同记忆化。</li>
+</ul>
+</li>
+<li><strong>实现</strong>：
+<ul>
+<li>较少使用，因数位 DP 通常递归更直观。</li>
+<li>适用场景：状态简单，需显式 DP 表格。</li>
+</ul>
+</li>
+<li><strong>复杂度</strong>：
+<ul>
+<li>同记忆化递归。</li>
+</ul>
+</li>
+<li><strong>适用性</strong>：调试复杂问题或需显式表格。</li>
+</ul>
+<h3 id="2.3-%E8%B7%AF%E5%BE%84%E6%81%A2%E5%A4%8D" tabindex="-1">2.3 路径恢复</h3>
+<ul>
+<li><strong>目标</strong>：
+<ul>
+<li>输出一个或多个满足条件的数字。</li>
+</ul>
+</li>
+<li><strong>方法</strong>：
+<ul>
+<li>在 DP 过程中记录每个状态的选择（选的数字 ( d )）。</li>
+<li>从 ( dp[0][初始状态] ) 回溯，构造数字。</li>
+</ul>
+</li>
+<li><strong>实现</strong>：
+<ul>
+<li>用数组 ( choice[pos][state] ) 记录 ( d ).</li>
+<li>回溯构造数字字符串。</li>
+</ul>
+</li>
+<li><strong>复杂度</strong>：
+<ul>
+<li>时间：( O(\log R \cdot S) )（DP）+ ( O(\log R) )（回溯）。</li>
+<li>空间：( O(\log R \cdot S) ).</li>
+</ul>
+</li>
+<li><strong>适用性</strong>：ACM 题目要求输出数字。</li>
+</ul>
+<h3 id="2.4-%E5%8F%98%E7%A7%8D%E4%B8%8E%E4%BC%98%E5%8C%96" tabindex="-1">2.4 变种与优化</h3>
+<ul>
+<li><strong>模运算</strong>：
+<ul>
+<li>答案模 ( 10^9+7 ).</li>
+</ul>
+</li>
+<li><strong>前导零</strong>：
+<ul>
+<li>控制是否允许前导零（常见于严格递增条件）。</li>
+</ul>
+</li>
+<li><strong>状态压缩</strong>：
+<ul>
+<li>若条件复杂（如 LIS），用位掩码压缩状态。</li>
+</ul>
+</li>
+<li><strong>多条件</strong>：
+<ul>
+<li>同时满足多个条件（如和为 ( K )，是 ( M ) 的倍数）。</li>
+</ul>
+</li>
+<li><strong>空间优化</strong>：
+<ul>
+<li>滚动数组或清空记忆化表格，空间降到 ( O(S) ).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3.-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90" tabindex="-1">3. 复杂度分析</h2>
+<table>
+<thead>
+<tr>
+<th><strong>方法</strong></th>
+<th><strong>时间复杂度</strong></th>
+<th><strong>空间复杂度</strong></th>
+<th><strong>适用场景</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>记忆化递归</td>
+<td>( O(\log R \cdot S) )</td>
+<td>( O(\log R \cdot S) )</td>
+<td>标准问题，( R \leq 10^{18} )，时间 ≥ 1s</td>
+</tr>
+<tr>
+<td>动态规划</td>
+<td>( O(\log R \cdot S) )</td>
+<td>( O(\log R \cdot S) )</td>
+<td>调试复杂状态，显式表格</td>
+</tr>
+<tr>
+<td>路径恢复</td>
+<td>( O(\log R \cdot S) )</td>
+<td>( O(\log R \cdot S) )</td>
+<td>需输出数字，( R \leq 10^{18} )</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>时间</strong>：( O(\log R \cdot S) )，( \log R ) 是位数，( S ) 是状态数（例如 ( 10 \cdot K )）。</li>
+<li><strong>空间</strong>：( O(\log R \cdot S) )，可优化到 ( O(S) ).</li>
+<li><strong>ACM 限制</strong>：
+<ul>
+<li>( R \leq 10^{18} )，位数 ( \leq 18 )，时间 ≥ 1 秒，Python 适用。</li>
+<li>复杂状态（( S \geq 10^6 )）需 C++.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4.-%E5%9C%A8-acm-%E7%AB%9E%E8%B5%9B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8" tabindex="-1">4. 在 ACM 竞赛中的应用</h2>
+<p>数位 DP 是 ACM 竞赛中的核心计数技术，常见于大范围计数、模运算和变种问题。以下是应用场景和解题思路：</p>
+<ol>
+<li><strong>标准数位 DP</strong>：
+<ul>
+<li><strong>题目</strong>：Codeforces 1036C（Classy Numbers，非零位 ≤ 3）。</li>
+<li><strong>解法</strong>：记忆化递归。</li>
+<li><strong>方法</strong>：
+<ul>
+<li>状态：( dp[pos][tight][cnt] )，( cnt ) 为非零位数。</li>
+<li>转移：枚举当前位 ( d )，更新 ( cnt ).</li>
+<li>答案：( f® - f(L-1) ).</li>
+<li>复杂度：时间 ( O(\log R \cdot 10 \cdot 4) ).</li>
+</ul>
+</li>
+<li><strong>Python 优势</strong>：字符串和列表操作简洁。</li>
+</ul>
+</li>
+<li><strong>路径恢复</strong>：
+<ul>
+<li><strong>题目</strong>：SPOJ NDIGITS（输出满足条件的数字）。</li>
+<li><strong>解法</strong>：DP + 路径恢复。</li>
+<li><strong>方法</strong>：
+<ul>
+<li>DP 计算满足条件的个数。</li>
+<li>记录选择，回溯构造数字。</li>
+<li>复杂度：时间 ( O(\log R \cdot S) ).</li>
+</ul>
+</li>
+<li><strong>Python 优势</strong>：字符串拼接和回溯直观。</li>
+</ul>
+</li>
+<li><strong>变种问题</strong>：
+<ul>
+<li><strong>模运算</strong>：HDU 3652（B-number，含 13 且被 13 整除）。</li>
+<li><strong>状态压缩</strong>：HDU 4352（XHXJ’s LIS，数位 DP + LIS）。</li>
+<li><strong>多条件</strong>：AtCoder ABC 162F（Digits，多个约束）。</li>
+<li><strong>示例</strong>：Codeforces 628D（Magic Numbers）。</li>
+<li><strong>方法</strong>：扩展状态（如模、模式匹配）。</li>
+<li><strong>Python 优势</strong>：条件判断和多维数组简洁。<br>
+<strong>ACM 优化技巧</strong>：</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>快速 I/O</strong>：Python 用 <code>sys.stdin.readline</code> 加速输入。</li>
+<li><strong>模运算</strong>：防止溢出，模 ( 10^9+7 ).</li>
+<li><strong>状态压缩</strong>：用位掩码或整数压缩复杂状态。</li>
+<li><strong>调试</strong>：打印 DP 表格或构造的数字，验证转移。</li>
+<li><strong>边界处理</strong>：注意 ( L=1 )、前导零、紧界。<br>
+<strong>Python 在 ACM 中的适用性</strong>：</li>
+<li><strong>优点</strong>：
+<ul>
+<li>代码简洁：DP 约 40-60 行，路径恢复 60-80 行，比赛中 10-15 分钟实现。</li>
+<li>调试方便：打印状态或数字，验证正确性。</li>
+<li>适用：( \log R \leq 18 )，状态 ( S \leq 10^5 )，时间 ≥ 1 秒。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：
+<ul>
+<li>效率：Python 比 C++ 慢 5-10 倍，复杂状态可能 TLE。</li>
+<li>内存：Python 数组占用较多，需优化。</li>
+</ul>
+</li>
+<li><strong>优化</strong>：
+<ul>
+<li>快速 I/O：<code>input = sys.stdin.readline</code>.</li>
+<li>滚动数组：空间降到 ( O(S) ).</li>
+<li>Cython/Numba：加速循环（非比赛场景）。<br>
+<strong>ACM 题目推荐</strong>：</li>
+</ul>
+</li>
+<li>Codeforces 1036C：Classy Numbers（非零位 ≤ 3）。</li>
+<li>HDU 3652：B-number（含 13 且被 13 整除）。</li>
+<li>SPOJ NDIGITS：Number of Digits（路径恢复）。</li>
+<li>AtCoder ABC 162F：Digits（多条件）。</li>
+<li>Codeforces 628D：Magic Numbers（模运算）。</li>
+</ul>
+<hr>
+<h2 id="5.-python-%E5%AE%9E%E7%8E%B0" tabindex="-1">5. Python 实现</h2>
+<p>以下通过数位 DP 的两种典型问题（各位之和为 ( K )、路径恢复）提供 Python 实现，带详细注释，适合 ACM 竞赛。代码格式优化以确保在 OneNote 中清晰显示。</p>
+<h3 id="5.1-%E5%90%84%E4%BD%8D%E4%B9%8B%E5%92%8C%E4%B8%BA-k%EF%BC%88%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92%EF%BC%89" tabindex="-1">5.1 各位之和为 K（记忆化递归）</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line">MOD = <span class="number">1000000007</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">digit_dp_sum_k</span>(<span class="params">L: <span class="built_in">int</span>, R: <span class="built_in">int</span>, K: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;数位 DP：统计 [L, R] 内各位之和为 K 的数字个数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">solve</span>(<span class="params">digits: <span class="built_in">list</span>, pos: <span class="built_in">int</span>, tight: <span class="built_in">int</span>, sum_digits: <span class="built_in">int</span>, lead: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> pos == <span class="built_in">len</span>(digits):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> sum_digits == K <span class="keyword">and</span> lead == <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> sum_digits &gt; K:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> dp[pos][tight][sum_digits][lead] != -<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> dp[pos][tight][sum_digits][lead]</span><br><span class="line">        </span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        limit = digits[pos] <span class="keyword">if</span> tight <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(limit + <span class="number">1</span>):</span><br><span class="line">            new_tight = tight <span class="keyword">and</span> d == limit</span><br><span class="line">            new_sum = sum_digits + d</span><br><span class="line">            new_lead = lead <span class="keyword">and</span> d == <span class="number">0</span></span><br><span class="line">            ans = (ans + solve(digits, pos + <span class="number">1</span>, new_tight, new_sum, new_lead)) % MOD</span><br><span class="line">        dp[pos][tight][sum_digits][lead] = ans</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">count</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        digits = [<span class="built_in">int</span>(d) <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">str</span>(x)]</span><br><span class="line">        <span class="keyword">global</span> dp</span><br><span class="line">        dp = [[[[-<span class="number">1</span>] * <span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(K + <span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(digits) + <span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">return</span> solve(digits, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> (count(R) - count(L - <span class="number">1</span>)) % MOD</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">L, R, K = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Count of numbers with sum of digits =&quot;</span>, K, <span class="string">&quot;:&quot;</span>, digit_dp_sum_k(L, R, K))</span><br></pre></td></tr></table></figure>
+<h3 id="5.2-%E8%B7%AF%E5%BE%84%E6%81%A2%E5%A4%8D%EF%BC%88%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%AA%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%95%B0%E5%AD%97%EF%BC%89" tabindex="-1">5.2 路径恢复（输出一个满足条件的数字）</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line">MOD = <span class="number">1000000007</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">digit_dp_path</span>(<span class="params">L: <span class="built_in">int</span>, R: <span class="built_in">int</span>, K: <span class="built_in">int</span></span>) -&gt; <span class="built_in">tuple</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;数位 DP：统计 [L, R] 内各位之和为 K 的数字个数，并返回一个数字&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">solve</span>(<span class="params">digits: <span class="built_in">list</span>, pos: <span class="built_in">int</span>, tight: <span class="built_in">int</span>, sum_digits: <span class="built_in">int</span>, lead: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> pos == <span class="built_in">len</span>(digits):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> sum_digits == K <span class="keyword">and</span> lead == <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> sum_digits &gt; K:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> dp[pos][tight][sum_digits][lead] != -<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> dp[pos][tight][sum_digits][lead]</span><br><span class="line">        </span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        limit = digits[pos] <span class="keyword">if</span> tight <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(limit + <span class="number">1</span>):</span><br><span class="line">            new_tight = tight <span class="keyword">and</span> d == limit</span><br><span class="line">            new_sum = sum_digits + d</span><br><span class="line">            new_lead = lead <span class="keyword">and</span> d == <span class="number">0</span></span><br><span class="line">            cnt = solve(digits, pos + <span class="number">1</span>, new_tight, new_sum, new_lead)</span><br><span class="line">            <span class="keyword">if</span> cnt &gt; <span class="number">0</span> <span class="keyword">and</span> choice[pos][tight][sum_digits][lead] == -<span class="number">1</span>:</span><br><span class="line">                choice[pos][tight][sum_digits][lead] = d</span><br><span class="line">            ans = (ans + cnt) % MOD</span><br><span class="line">        dp[pos][tight][sum_digits][lead] = ans</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">count</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        digits = [<span class="built_in">int</span>(d) <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">str</span>(x)]</span><br><span class="line">        <span class="keyword">global</span> dp, choice</span><br><span class="line">        dp = [[[[-<span class="number">1</span>] * <span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(K + <span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(digits) + <span class="number">1</span>)]</span><br><span class="line">        choice = [[[[-<span class="number">1</span>] * <span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(K + <span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(digits) + <span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">return</span> solve(digits, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 回溯构造数字</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">construct</span>(<span class="params">digits: <span class="built_in">list</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        result = []</span><br><span class="line">        pos, tight, sum_digits, lead = <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> pos &lt; <span class="built_in">len</span>(digits):</span><br><span class="line">            d = choice[pos][tight][sum_digits][lead]</span><br><span class="line">            <span class="keyword">if</span> d == -<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">            result.append(<span class="built_in">str</span>(d))</span><br><span class="line">            tight = tight <span class="keyword">and</span> d == digits[pos]</span><br><span class="line">            sum_digits += d</span><br><span class="line">            lead = lead <span class="keyword">and</span> d == <span class="number">0</span></span><br><span class="line">            pos += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(result) <span class="keyword">if</span> sum_digits == K <span class="keyword">and</span> lead == <span class="number">0</span> <span class="keyword">else</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算答案</span></span><br><span class="line">    ans = (count(R) - count(L - <span class="number">1</span>)) % MOD</span><br><span class="line">    digits = [<span class="built_in">int</span>(d) <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">str</span>(R)]</span><br><span class="line">    number = construct(digits)</span><br><span class="line">    <span class="keyword">return</span> ans, number</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">L, R, K = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">count, number = digit_dp_path(L, R, K)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Count of numbers with sum of digits =&quot;</span>, K, <span class="string">&quot;:&quot;</span>, count)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;One such number:&quot;</span>, number <span class="keyword">if</span> number <span class="keyword">else</span> <span class="string">&quot;None&quot;</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="6.-%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B" tabindex="-1">6. 运行过程</h2>
+<h3 id="%E8%BE%93%E5%85%A5" tabindex="-1">输入</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 100 5</span><br></pre></td></tr></table></figure>
+<ul>
+<li>( L = 1, R = 100, K = 5 )</li>
+<li>条件：各位之和为 5。</li>
+</ul>
+<h3 id="6.1-%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92" tabindex="-1">6.1 记忆化递归</h3>
+<ul>
+<li><strong>计算 ( f(100) )</strong>：
+<ul>
+<li>数字：( [1, 0, 0] )，3 位。</li>
+<li>初始：( solve(0, 1, 0, 1) ).</li>
+<li>( pos=0, tight=1, sum=0, lead=1 ):
+<ul>
+<li>( d=0 ): ( solve(1, 1, 0, 1) ).</li>
+<li>( d=1 ): ( solve(1, 1, 1, 0) ).</li>
+<li>( d=2 ): ( solve(1, 0, 2, 0) ).</li>
+<li>…</li>
+</ul>
+</li>
+<li>( pos=3 ): 检查 ( sum == 5 ).</li>
+<li>结果：6（14, 23, 32, 41, 50, 5）。</li>
+</ul>
+</li>
+<li><strong>计算 ( f(0) )</strong>：
+<ul>
+<li>结果：0（无数字）。</li>
+</ul>
+</li>
+<li><strong>答案</strong>：( f(100) - f(0) = 6 - 0 = 6 ).</li>
+<li><strong>Space</strong>：( O(\log R \cdot 10 \cdot K) = O(3 \cdot 2 \cdot 6) ).<br>
+<strong>Output</strong>:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Count of numbers with sum of digits = 5 : 6</span><br></pre></td></tr></table></figure>
+<h3 id="6.2-%E8%B7%AF%E5%BE%84%E6%81%A2%E5%A4%8D" tabindex="-1">6.2 路径恢复</h3>
+<ul>
+<li><strong>DP 和 choice 表格</strong>：
+<ul>
+<li>同记忆化，( f(100) = 6 ).</li>
+<li>( choice[0][1][0][1] = 1 )（选 1）。</li>
+<li>( choice[1][1][1][0] = 4 )（选 4）。</li>
+</ul>
+</li>
+<li><strong>回溯</strong>：
+<ul>
+<li>( pos=0, tight=1, sum=0, lead=1 ): ( d=1 ).</li>
+<li>( pos=1, tight=1, sum=1, lead=0 ): ( d=4 ).</li>
+<li>( pos=2 ): ( sum=5 )，结束。</li>
+<li>结果：( 14 ).</li>
+</ul>
+</li>
+<li><strong>答案</strong>：个数 6，数字 14（可能不同，如 23）。</li>
+<li><strong>Space</strong>：( O(\log R \cdot 10 \cdot K) ).<br>
+<strong>Output</strong>:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Count of numbers with sum of digits = 5 : 6</span><br><span class="line">One such number: 14</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="7.-%E6%95%B0%E4%BD%8D-dp-%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9" tabindex="-1">7. 数位 DP 的优缺点</h2>
+<h3 id="7.1-%E4%BC%98%E7%82%B9" tabindex="-1">7.1 优点</h3>
+<ul>
+<li><strong>高效计数</strong>：( O(\log R \cdot S) )，适合 ( R \leq 10^{18} ).</li>
+<li><strong>灵活状态</strong>：支持多种条件（如和、模、模式）。</li>
+<li><strong>ACM 友好</strong>：Python 实现约 40-80 行，比赛中 10-15 分钟完成。</li>
+<li><strong>调试方便</strong>：打印状态或构造数字，验证正确性。</li>
+<li><strong>路径恢复</strong>：可输出满足条件的数字。</li>
+</ul>
+<h3 id="7.2-%E7%BC%BA%E7%82%B9" tabindex="-1">7.2 缺点</h3>
+<ul>
+<li><strong>状态设计复杂</strong>：需根据条件设计状态（如模、LIS）。</li>
+<li><strong>空间需求</strong>：( O(\log R \cdot S) )，大状态数超内存。</li>
+<li><strong>ACM 限制</strong>：
+<ul>
+<li>复杂状态（( S \geq 10^6 )）需 C++.</li>
+<li>路径恢复增加实现难度。</li>
+</ul>
+</li>
+<li><strong>边界处理</strong>：
+<ul>
+<li>注意 ( L=1 )、前导零、紧界。</li>
+</ul>
+</li>
+</ul>
+<h3 id="7.3-%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91" tabindex="-1">7.3 改进方向</h3>
+<ul>
+<li><strong>空间优化</strong>：滚动数组，空间降到 ( O(S) ).</li>
+<li><strong>状态压缩</strong>：用位掩码或整数压缩。</li>
+<li><strong>快速 I/O</strong>：Python 用 <code>sys.stdin.readline</code>.</li>
+<li><strong>Cython/Numba</strong>：加速 Python 循环（非比赛场景）.</li>
+<li><strong>预处理</strong>：常见条件预计算（如模表）。</li>
+</ul>
+<hr>
+<h2 id="8.-%E4%B8%8E%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%AF%B9%E6%AF%94" tabindex="-1">8. 与其他问题的对比</h2>
+<ul>
+<li><strong>数位 DP vs 子集和</strong>：
+<ul>
+<li>数位 DP：逐位构造，范围计数。</li>
+<li>子集和：组合优化，存在性.</li>
+</ul>
+</li>
+<li><strong>数位 DP vs 布尔括号</strong>：
+<ul>
+<li>数位 DP：数字位计数。</li>
+<li>布尔括号：区间 DP，逻辑计数.</li>
+</ul>
+</li>
+<li><strong>数位 DP vs 矩阵链乘法</strong>：
+<ul>
+<li>数位 DP：计数问题。</li>
+<li>矩阵链乘法：优化代价.</li>
+</ul>
+</li>
+<li><strong>ACM 适用性</strong>：
+<ul>
+<li>数位 DP：大范围计数。</li>
+<li>子集和：背包 DP。</li>
+<li>布尔括号：区间 DP。</li>
+<li>矩阵链乘法：区间 DP。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="9.-%E6%80%BB%E7%BB%93" tabindex="-1">9. 总结</h2>
+<p>数位 DP 是解决大范围数字计数问题的强大工具，通过逐位构造和动态规划高效统计：</p>
+<ul>
+<li><strong>核心方法</strong>：
+<ul>
+<li>记忆化递归：时间 ( O(\log R \cdot S) )，ACM 标配。</li>
+<li>路径恢复：输出满足条件的数字。</li>
+</ul>
+</li>
+<li><strong>ACM 应用</strong>：
+<ul>
+<li>标准计数（Codeforces 1036C）。</li>
+<li>路径恢复（SPOJ NDIGITS）。</li>
+<li>变种（HDU 4352）。</li>
+</ul>
+</li>
+<li><strong>Python 实现</strong>：约 40-80 行，比赛中 10-15 分钟，适合 ( \log R \leq 18 )，时间 ≥ 1 秒。</li>
+<li><strong>优化</strong>：模运算、快速 I/O、状态压缩。<br>
+通过记忆化递归和路径恢复的 Python 代码及模拟，展示了数位 DP 的实现和运行过程。在 ACM 竞赛中，数位 DP 是处理大范围计数的核心技术，Python 实现简洁高效。<br>
+<strong>学习建议</strong>：</li>
+</ul>
+<ol>
+<li><strong>手动模拟</strong>：
+<ul>
+<li>用小数据（如 ( R=20, K=5 )）手动构造数字，验证状态转移。</li>
+</ul>
+</li>
+<li><strong>ACM 练习</strong>：
+<ul>
+<li>Codeforces 1036C、HDU 3652、SPOJ NDIGITS，用 Python 实现。</li>
+</ul>
+</li>
+<li><strong>深入扩展</strong>：
+<ul>
+<li>学习状态压缩（HDU 4352）、多条件、模运算。</li>
+</ul>
+</li>
+<li><strong>比赛策略</strong>：
+<ul>
+<li>优先实现记忆化递归，验证正确性。</li>
+<li>若需数字，添加路径恢复。</li>
+<li>若时间严格，考虑 C++.</li>
+</ul>
+</li>
+</ol>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://borrowyourhuaji.github.io/2025/09/13/%E6%95%B0%E4%BD%8Ddp/" title="数位dp" target="_blank" rel="external">https://borrowyourhuaji.github.io/2025/09/13/数位dp/</a>
+    </li>
+    
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/4%20(1).gif" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">borrowyourhuaji</span><small class="ml-1x">😋</small></a></h3>
+        <div>ヾ(≧▽≦*)o</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/09/13/yolo/" title="yolo"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

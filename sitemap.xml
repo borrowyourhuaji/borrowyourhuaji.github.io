@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://borrowyourhuaji.github.io/2025/09/13/%E6%95%B0%E4%BD%8Ddp/</loc>
+    
+    <lastmod>2025-09-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://borrowyourhuaji.github.io/2025/09/13/yolo/</loc>
+    
+    <lastmod>2025-09-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://borrowyourhuaji.github.io/2025/09/13/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
     
     <lastmod>2025-09-13</lastmod>
@@ -19,15 +37,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://borrowyourhuaji.github.io/2025/09/09/hello-world/</loc>
-    
-    <lastmod>2025-09-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://borrowyourhuaji.github.io/</loc>
@@ -36,6 +45,20 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>https://borrowyourhuaji.github.io/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/</loc>
+    <lastmod>2025-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://borrowyourhuaji.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2025-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 
   

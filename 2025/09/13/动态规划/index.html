@@ -26,8 +26,9 @@
 <meta property="og:description" content="动态规划（Dynamic Programming，简称 DP）是算法设计中的一种重要方法，用于解决具有 重叠子问题 和 最优子结构 的优化问题。它通过将问题分解为较小的子问题，存储子问题的解以避免重复计算，从而高效求解复杂问题。在 ACM 竞赛 中，DP 是核心技巧，广泛应用于序列、图、树、背包、区间等问题。本文将详细讲解 DP 的概念、性质、设计步骤、常见类型、编程方法、在 ACM 竞赛中的应用">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-09-13T11:16:41.000Z">
-<meta property="article:modified_time" content="2025-09-13T12:53:33.325Z">
+<meta property="article:modified_time" content="2025-09-13T13:37:51.043Z">
 <meta property="article:author" content="borrowyourhuaji">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="https://borrowyourhuaji.github.io/2025/09/13/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
@@ -137,15 +138,29 @@
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/" rel="tag">文档、库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/" style="font-size: 13px;">文档、库</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px;">算法</a>
+    </div>
+  </div>
+
     
       
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -157,6 +172,36 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/%E6%95%B0%E4%BD%8Ddp/" class="title">数位dp</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T15:00:51.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/yolo/" class="title">yolo</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T13:57:08.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -183,21 +228,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2025-09-13T11:16:41.000Z" itemprop="datePublished">2025-09-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2025/09/09/hello-world/" class="title">Hello World</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2025-09-09T07:21:35.479Z" itemprop="datePublished">2025-09-09</time>
               </p>
             </div>
           </li>
@@ -236,68 +266,87 @@
 </span>
         
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+  </span>
+
 
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="动态规划（Dynamic-Programming，简称-DP）是算法设计中的一种重要方法，用于解决具有-重叠子问题-和-最优子结构-的优化问题。它通过将问题分解为较小的子问题，存储子问题的解以避免重复计算，从而高效求解复杂问题。在-ACM-竞赛-中，DP-是核心技巧，广泛应用于序列、图、树、背包、区间等问题。本文将详细讲解-DP-的概念、性质、设计步骤、常见类型、编程方法、在-ACM-竞赛中的应用，并提供带详细注释的-Python-实现-示例，以及模拟运行过程，帮助全面理解-DP-及其在竞赛中的价值。"><a href="#动态规划（Dynamic-Programming，简称-DP）是算法设计中的一种重要方法，用于解决具有-重叠子问题-和-最优子结构-的优化问题。它通过将问题分解为较小的子问题，存储子问题的解以避免重复计算，从而高效求解复杂问题。在-ACM-竞赛-中，DP-是核心技巧，广泛应用于序列、图、树、背包、区间等问题。本文将详细讲解-DP-的概念、性质、设计步骤、常见类型、编程方法、在-ACM-竞赛中的应用，并提供带详细注释的-Python-实现-示例，以及模拟运行过程，帮助全面理解-DP-及其在竞赛中的价值。" class="headerlink" title="动态规划（Dynamic Programming，简称 DP）是算法设计中的一种重要方法，用于解决具有 重叠子问题 和 最优子结构 的优化问题。它通过将问题分解为较小的子问题，存储子问题的解以避免重复计算，从而高效求解复杂问题。在 ACM 竞赛 中，DP 是核心技巧，广泛应用于序列、图、树、背包、区间等问题。本文将详细讲解 DP 的概念、性质、设计步骤、常见类型、编程方法、在 ACM 竞赛中的应用，并提供带详细注释的 Python 实现 示例，以及模拟运行过程，帮助全面理解 DP 及其在竞赛中的价值。"></a>动态规划（Dynamic Programming，简称 DP）是算法设计中的一种重要方法，用于解决具有 <strong>重叠子问题</strong> 和 <strong>最优子结构</strong> 的优化问题。它通过将问题分解为较小的子问题，存储子问题的解以避免重复计算，从而高效求解复杂问题。在 <strong>ACM 竞赛</strong> 中，DP 是核心技巧，广泛应用于序列、图、树、背包、区间等问题。本文将详细讲解 DP 的概念、性质、设计步骤、常见类型、编程方法、在 ACM 竞赛中的应用，并提供带详细注释的 <strong>Python 实现</strong> 示例，以及模拟运行过程，帮助全面理解 DP 及其在竞赛中的价值。</h2><h2 id="1-动态规划的基本概念"><a href="#1-动态规划的基本概念" class="headerlink" title="1. 动态规划的基本概念"></a>1. 动态规划的基本概念</h2><h3 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h3><p>动态规划是一种通过 <strong>分阶段</strong> 解决问题的方法，每个阶段的决策依赖于前几个阶段的解。DP 的核心思想是：</p>
+        <h2 id="%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dynamic-programming%EF%BC%8C%E7%AE%80%E7%A7%B0-dp%EF%BC%89%E6%98%AF%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%9A%84%E4%B8%80%E7%A7%8D%E9%87%8D%E8%A6%81%E6%96%B9%E6%B3%95%EF%BC%8C%E7%94%A8%E4%BA%8E%E8%A7%A3%E5%86%B3%E5%85%B7%E6%9C%89-%E9%87%8D%E5%8F%A0%E5%AD%90%E9%97%AE%E9%A2%98-%E5%92%8C-%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84-%E7%9A%84%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E3%80%82%E5%AE%83%E9%80%9A%E8%BF%87%E5%B0%86%E9%97%AE%E9%A2%98%E5%88%86%E8%A7%A3%E4%B8%BA%E8%BE%83%E5%B0%8F%E7%9A%84%E5%AD%90%E9%97%AE%E9%A2%98%EF%BC%8C%E5%AD%98%E5%82%A8%E5%AD%90%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E4%BB%A5%E9%81%BF%E5%85%8D%E9%87%8D%E5%A4%8D%E8%AE%A1%E7%AE%97%EF%BC%8C%E4%BB%8E%E8%80%8C%E9%AB%98%E6%95%88%E6%B1%82%E8%A7%A3%E5%A4%8D%E6%9D%82%E9%97%AE%E9%A2%98%E3%80%82%E5%9C%A8-acm-%E7%AB%9E%E8%B5%9B-%E4%B8%AD%EF%BC%8Cdp-%E6%98%AF%E6%A0%B8%E5%BF%83%E6%8A%80%E5%B7%A7%EF%BC%8C%E5%B9%BF%E6%B3%9B%E5%BA%94%E7%94%A8%E4%BA%8E%E5%BA%8F%E5%88%97%E3%80%81%E5%9B%BE%E3%80%81%E6%A0%91%E3%80%81%E8%83%8C%E5%8C%85%E3%80%81%E5%8C%BA%E9%97%B4%E7%AD%89%E9%97%AE%E9%A2%98%E3%80%82%E6%9C%AC%E6%96%87%E5%B0%86%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3-dp-%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%81%E6%80%A7%E8%B4%A8%E3%80%81%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4%E3%80%81%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%9E%8B%E3%80%81%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95%E3%80%81%E5%9C%A8-acm-%E7%AB%9E%E8%B5%9B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%8C%E5%B9%B6%E6%8F%90%E4%BE%9B%E5%B8%A6%E8%AF%A6%E7%BB%86%E6%B3%A8%E9%87%8A%E7%9A%84-python-%E5%AE%9E%E7%8E%B0-%E7%A4%BA%E4%BE%8B%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%A8%A1%E6%8B%9F%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B%EF%BC%8C%E5%B8%AE%E5%8A%A9%E5%85%A8%E9%9D%A2%E7%90%86%E8%A7%A3-dp-%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%AB%9E%E8%B5%9B%E4%B8%AD%E7%9A%84%E4%BB%B7%E5%80%BC%E3%80%82" tabindex="-1">动态规划（Dynamic Programming，简称 DP）是算法设计中的一种重要方法，用于解决具有 <strong>重叠子问题</strong> 和 <strong>最优子结构</strong> 的优化问题。它通过将问题分解为较小的子问题，存储子问题的解以避免重复计算，从而高效求解复杂问题。在 <strong>ACM 竞赛</strong> 中，DP 是核心技巧，广泛应用于序列、图、树、背包、区间等问题。本文将详细讲解 DP 的概念、性质、设计步骤、常见类型、编程方法、在 ACM 竞赛中的应用，并提供带详细注释的 <strong>Python 实现</strong> 示例，以及模拟运行过程，帮助全面理解 DP 及其在竞赛中的价值。</h2>
+<h2 id="1.-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5" tabindex="-1">1. 动态规划的基本概念</h2>
+<h3 id="1.1-%E5%AE%9A%E4%B9%89" tabindex="-1">1.1 定义</h3>
+<p>动态规划是一种通过 <strong>分阶段</strong> 解决问题的方法，每个阶段的决策依赖于前几个阶段的解。DP 的核心思想是：</p>
 <ul>
 <li><strong>分解问题</strong>：将原问题分解为若干子问题。</li>
 <li><strong>存储中间结果</strong>：用表格（数组或哈希表）保存子问题的解，避免重复计算。</li>
-<li><strong>递归求解</strong>：通过子问题的解递归构建原问题的解。<br>DP 通常用于求解 <strong>最优化问题</strong>（如最大值、最小值、最短路径）或 <strong>计数问题</strong>（如方案数），其适用条件包括：</li>
+<li><strong>递归求解</strong>：通过子问题的解递归构建原问题的解。<br>
+DP 通常用于求解 <strong>最优化问题</strong>（如最大值、最小值、最短路径）或 <strong>计数问题</strong>（如方案数），其适用条件包括：</li>
 <li><strong>最优子结构</strong>：原问题的最优解可由子问题的最优解构成。</li>
 <li><strong>重叠子问题</strong>：子问题在递归分解中被多次求解，适合存储优化。</li>
-<li><strong>无后效性</strong>：当前阶段的决策只依赖于之前阶段的状态，不受后续决策影响。<br><strong>示例</strong>：</li>
-<li><strong>斐波那契数列</strong>：第 ( n ) 项 ( F(n) &#x3D; F(n-1) + F(n-2) )，子问题重叠，直接递归效率低，DP 存储中间结果优化。</li>
+<li><strong>无后效性</strong>：当前阶段的决策只依赖于之前阶段的状态，不受后续决策影响。<br>
+<strong>示例</strong>：</li>
+<li><strong>斐波那契数列</strong>：第 ( n ) 项 ( F(n) = F(n-1) + F(n-2) )，子问题重叠，直接递归效率低，DP 存储中间结果优化。</li>
 <li><strong>最长公共子序列（LCS）</strong>：字符串 ( A ) 和 ( B ) 的 LCS 依赖于前缀的 LCS，具有最优子结构。</li>
 </ul>
-<h3 id="1-2-关键性质"><a href="#1-2-关键性质" class="headerlink" title="1.2 关键性质"></a>1.2 关键性质</h3><ul>
+<h3 id="1.2-%E5%85%B3%E9%94%AE%E6%80%A7%E8%B4%A8" tabindex="-1">1.2 关键性质</h3>
+<ul>
 <li><strong>状态（State）</strong>：用变量表示子问题的解，通常是数组或多维表格，如 ( dp[i] ) 表示前 ( i ) 项的最优解。</li>
-<li><strong>状态转移方程（Transition）</strong>：描述如何从已知状态推导新状态，如 ( dp[i] &#x3D; \max(dp[i-1], dp[i-2]) )。</li>
-<li><strong>初始条件（Base Case）</strong>：DP 表格的起点，如 ( dp[0] &#x3D; 0 )。</li>
+<li><strong>状态转移方程（Transition）</strong>：描述如何从已知状态推导新状态，如 ( dp[i] = \max(dp[i-1], dp[i-2]) )。</li>
+<li><strong>初始条件（Base Case）</strong>：DP 表格的起点，如 ( dp[0] = 0 )。</li>
 <li><strong>目标</strong>：最终求解的状态，如 ( dp[n] )。</li>
 <li><strong>时间复杂度</strong>：通常为 ( O(\text{状态数} \times \text{转移复杂度}) ).</li>
 <li><strong>空间复杂度</strong>：取决于状态存储，通常为 ( O(\text{状态数}) )，可通过滚动数组优化。</li>
 </ul>
-<h3 id="1-3-DP-与其他方法的区别"><a href="#1-3-DP-与其他方法的区别" class="headerlink" title="1.3 DP 与其他方法的区别"></a>1.3 DP 与其他方法的区别</h3><ul>
-<li><strong>与递归（Recursion）</strong>：<ul>
+<h3 id="1.3-dp-%E4%B8%8E%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB" tabindex="-1">1.3 DP 与其他方法的区别</h3>
+<ul>
+<li><strong>与递归（Recursion）</strong>：
+<ul>
 <li>递归直接分解问题，可能重复计算子问题（指数复杂度）。</li>
 <li>DP 存储子问题解（通常多项式复杂度）。</li>
 </ul>
 </li>
-<li><strong>与分治（Divide and Conquer）</strong>：<ul>
+<li><strong>与分治（Divide and Conquer）</strong>：
+<ul>
 <li>分治将问题分为独立子问题（如归并排序）。</li>
 <li>DP 处理重叠子问题，子问题间有依赖。</li>
 </ul>
 </li>
-<li><strong>与贪心（Greedy）</strong>：<ul>
+<li><strong>与贪心（Greedy）</strong>：
+<ul>
 <li>贪心基于局部最优，适用于特定问题（如活动选择）。</li>
 <li>DP 考虑全局最优，适用范围更广（如 0-1 背包）。</li>
 </ul>
 </li>
 </ul>
-<h3 id="1-4-DP-的设计步骤"><a href="#1-4-DP-的设计步骤" class="headerlink" title="1.4 DP 的设计步骤"></a>1.4 DP 的设计步骤</h3><ol>
+<h3 id="1.4-dp-%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4" tabindex="-1">1.4 DP 的设计步骤</h3>
+<ol>
 <li><strong>定义状态</strong>：确定 ( dp[i][j]… ) 表示什么，通常与子问题相关。</li>
 <li><strong>推导状态转移方程</strong>：分析当前状态如何由前几个状态得出。</li>
 <li><strong>确定初始条件</strong>：初始化边界状态（如 ( dp[0][0] )。</li>
 <li><strong>计算顺序</strong>：确保状态按依赖顺序计算（自底向上或记忆化递归）。</li>
 <li><strong>求解目标</strong>：输出最终状态（如 ( dp[n][m] \）。</li>
-<li><strong>优化空间</strong>：若状态只依赖前几行&#x2F;列，用滚动数组减少空间。</li>
+<li><strong>优化空间</strong>：若状态只依赖前几行/列，用滚动数组减少空间。</li>
 </ol>
-<h3 id="1-5-常见-DP-类型"><a href="#1-5-常见-DP-类型" class="headerlink" title="1.5 常见 DP 类型"></a>1.5 常见 DP 类型</h3><ol>
+<h3 id="1.5-%E5%B8%B8%E8%A7%81-dp-%E7%B1%BB%E5%9E%8B" tabindex="-1">1.5 常见 DP 类型</h3>
+<ol>
 <li><strong>线性 DP</strong>：状态沿一维序列转移，如斐波那契、LIS（最长递增子序列）。</li>
 <li><strong>背包 DP</strong>：处理资源分配，如 0-1 背包、完全背包。</li>
 <li><strong>区间 DP</strong>：处理区间合并或分割，如石子合并、括号匹配。</li>
 <li><strong>树形 DP</strong>：在树上进行状态转移，如树的最小支配集。</li>
 <li><strong>状态压缩 DP</strong>：用二进制表示状态，适合小规模集合问题。</li>
 <li><strong>数位 DP</strong>：处理数字范围内的计数问题，如数字和。</li>
-<li><strong>概率&#x2F;期望 DP</strong>：计算概率或期望值，如博弈问题。</li>
+<li><strong>概率/期望 DP</strong>：计算概率或期望值，如博弈问题。</li>
 <li><strong>多维 DP</strong>：处理多变量状态，如 LCS、编辑距离。</li>
 </ol>
-<h3 id="1-6-应用场景"><a href="#1-6-应用场景" class="headerlink" title="1.6 应用场景"></a>1.6 应用场景</h3><ul>
-<li><strong>ACM 竞赛</strong>：<ul>
+<h3 id="1.6-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF" tabindex="-1">1.6 应用场景</h3>
+<ul>
+<li><strong>ACM 竞赛</strong>：
+<ul>
 <li>序列问题：LIS、LCS、编辑距离。</li>
 <li>背包问题：0-1 背包、完全背包、多重背包。</li>
 <li>区间问题：石子合并、区间调度。</li>
@@ -305,15 +354,18 @@
 <li>图上问题：最短路径、DAG 上的 DP。</li>
 </ul>
 </li>
-<li><strong>实际应用</strong>：<ul>
+<li><strong>实际应用</strong>：
+<ul>
 <li>机器学习：隐马尔可夫模型（HMM）、Viterbi 算法。</li>
 <li>运筹学：资源分配、调度优化。</li>
 <li>生物信息学：序列比对。</li>
 </ul>
 </li>
 </ul>
-<h3 id="1-7-复杂度分析"><a href="#1-7-复杂度分析" class="headerlink" title="1.7 复杂度分析"></a>1.7 复杂度分析</h3><ul>
-<li><strong>时间复杂度</strong>：( O(\text{状态数} \times \text{转移复杂度}) )。<ul>
+<h3 id="1.7-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90" tabindex="-1">1.7 复杂度分析</h3>
+<ul>
+<li><strong>时间复杂度</strong>：( O(\text{状态数} \times \text{转移复杂度}) )。
+<ul>
 <li>例：LCS 为 ( O(n \times m) )，状态数 ( n \times m )，转移 ( O(1) )。</li>
 </ul>
 </li>
@@ -321,15 +373,19 @@
 <li><strong>记忆化递归</strong>：与递推等价，适合状态空间稀疏或难以确定计算顺序。</li>
 </ul>
 <hr>
-<h2 id="2-动态规划的编程方法"><a href="#2-动态规划的编程方法" class="headerlink" title="2. 动态规划的编程方法"></a>2. 动态规划的编程方法</h2><p>DP 的实现方式主要分为 <strong>递推（Bottom-Up）</strong> 和 <strong>记忆化递归（Top-Down）</strong>，以下详细讲解两种方法的特点和实现步骤。</p>
-<h3 id="2-1-递推（Bottom-Up）"><a href="#2-1-递推（Bottom-Up）" class="headerlink" title="2.1 递推（Bottom-Up）"></a>2.1 递推（Bottom-Up）</h3><ul>
-<li><strong>特点</strong>：<ul>
+<h2 id="2.-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95" tabindex="-1">2. 动态规划的编程方法</h2>
+<p>DP 的实现方式主要分为 <strong>递推（Bottom-Up）</strong> 和 <strong>记忆化递归（Top-Down）</strong>，以下详细讲解两种方法的特点和实现步骤。</p>
+<h3 id="2.1-%E9%80%92%E6%8E%A8%EF%BC%88bottom-up%EF%BC%89" tabindex="-1">2.1 递推（Bottom-Up）</h3>
+<ul>
+<li><strong>特点</strong>：
+<ul>
 <li>自底向上计算，从初始状态递推到目标状态。</li>
 <li>使用循环填充 DP 表格，适合状态空间连续。</li>
 <li>空间效率高，易于优化（如滚动数组）。</li>
 </ul>
 </li>
-<li><strong>步骤</strong>：<ol>
+<li><strong>步骤</strong>：
+<ol>
 <li>定义 DP 数组（如 ( dp[i][j] )）。</li>
 <li>初始化边界条件。</li>
 <li>按状态依赖顺序循环，计算状态转移。</li>
@@ -337,30 +393,36 @@
 </ol>
 </li>
 <li><strong>适用场景</strong>：状态空间明确，计算顺序简单（如线性 DP、背包 DP）。</li>
-<li><strong>优点</strong>：<ul>
+<li><strong>优点</strong>：
+<ul>
 <li>避免递归开销，运行效率高。</li>
 <li>易于调试，状态计算顺序清晰。</li>
 </ul>
 </li>
-<li><strong>缺点</strong>：<ul>
+<li><strong>缺点</strong>：
+<ul>
 <li>状态空间稀疏时可能浪费计算。</li>
-<li>复杂状态转移可能难以推导。<br><strong>示例</strong>：0-1 背包问题</li>
+<li>复杂状态转移可能难以推导。<br>
+<strong>示例</strong>：0-1 背包问题</li>
 </ul>
 </li>
 <li>问题：给定 ( n ) 个物品，重量 ( w[i] )，价值 ( v[i] )，背包容量 ( W )，求最大价值。</li>
 <li>状态：( dp[i][j] ) 表示前 ( i ) 个物品，容量 ( j ) 时的最大价值。</li>
-<li>转移：( dp[i][j] &#x3D; \max(dp[i-1][j], dp[i-1][j-w[i]] + v[i]) )（若 ( j \geq w[i] )）。</li>
-<li>初始：( dp[0][j] &#x3D; 0 )，( dp[i][0] &#x3D; 0 )。</li>
+<li>转移：( dp[i][j] = \max(dp[i-1][j], dp[i-1][j-w[i]] + v[i]) )（若 ( j \geq w[i] )）。</li>
+<li>初始：( dp[0][j] = 0 )，( dp[i][0] = 0 )。</li>
 <li>目标：( dp[n][W] ).</li>
 </ul>
-<h3 id="2-2-记忆化递归（Top-Down）"><a href="#2-2-记忆化递归（Top-Down）" class="headerlink" title="2.2 记忆化递归（Top-Down）"></a>2.2 记忆化递归（Top-Down）</h3><ul>
-<li><strong>特点</strong>：<ul>
+<h3 id="2.2-%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92%EF%BC%88top-down%EF%BC%89" tabindex="-1">2.2 记忆化递归（Top-Down）</h3>
+<ul>
+<li><strong>特点</strong>：
+<ul>
 <li>自顶向下递归，从目标状态分解到子问题。</li>
 <li>使用记忆化（Memoization）存储已计算的子问题解。</li>
 <li>适合状态空间稀疏或状态转移复杂。</li>
 </ul>
 </li>
-<li><strong>步骤</strong>：<ol>
+<li><strong>步骤</strong>：
+<ol>
 <li>定义递归函数，参数表示状态。</li>
 <li>创建记忆化表格（如字典或数组）。</li>
 <li>在递归中检查是否已计算，若是返回缓存结果。</li>
@@ -368,117 +430,139 @@
 </ol>
 </li>
 <li><strong>适用场景</strong>：状态空间不规则、递归关系复杂（如树形 DP、数位 DP）。</li>
-<li><strong>优点</strong>：<ul>
+<li><strong>优点</strong>：
+<ul>
 <li>代码直观，递归逻辑易于理解。</li>
 <li>仅计算用到的状态，适合稀疏问题。</li>
 </ul>
 </li>
-<li><strong>缺点</strong>：<ul>
+<li><strong>缺点</strong>：
+<ul>
 <li>递归栈开销大，可能导致栈溢出。</li>
-<li>Python 递归深度有限，需调整或转为递推。<br><strong>示例</strong>：最长公共子序列（LCS）</li>
+<li>Python 递归深度有限，需调整或转为递推。<br>
+<strong>示例</strong>：最长公共子序列（LCS）</li>
 </ul>
 </li>
 <li>问题：给定字符串 ( A ) 和 ( B )，求最长公共子序列长度。</li>
 <li>状态：( dp[i][j] ) 表示 ( A[0:i] ) 和 ( B[0:j] ) 的 LCS 长度。</li>
-<li>转移：<ul>
-<li>若 ( A[i-1] &#x3D;&#x3D; B[j-1] )，则 ( dp[i][j] &#x3D; dp[i-1][j-1] + 1 )。</li>
-<li>否则，( dp[i][j] &#x3D; \max(dp[i-1][j], dp[i][j-1]) )。</li>
+<li>转移：
+<ul>
+<li>若 ( A[i-1] == B[j-1] )，则 ( dp[i][j] = dp[i-1][j-1] + 1 )。</li>
+<li>否则，( dp[i][j] = \max(dp[i-1][j], dp[i][j-1]) )。</li>
 </ul>
 </li>
-<li>初始：( dp[0][j] &#x3D; 0 )，( dp[i][0] &#x3D; 0 ).</li>
+<li>初始：( dp[0][j] = 0 )，( dp[i][0] = 0 ).</li>
 <li>目标：( dp[|A|][|B|] ).</li>
 </ul>
-<h3 id="2-3-空间优化"><a href="#2-3-空间优化" class="headerlink" title="2.3 空间优化"></a>2.3 空间优化</h3><ul>
-<li><strong>滚动数组</strong>：<ul>
-<li>若状态只依赖前几行&#x2F;列，用小数组覆盖大数组。</li>
+<h3 id="2.3-%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96" tabindex="-1">2.3 空间优化</h3>
+<ul>
+<li><strong>滚动数组</strong>：
+<ul>
+<li>若状态只依赖前几行/列，用小数组覆盖大数组。</li>
 <li>例：0-1 背包从 ( dp[n][W] ) 优化到 ( dp[W] )，空间 ( O(W) ).</li>
 </ul>
 </li>
-<li><strong>状态压缩</strong>：<ul>
+<li><strong>状态压缩</strong>：
+<ul>
 <li>用位运算表示状态，适合状态压缩 DP。</li>
 <li>例：TSP（旅行商问题），状态从 ( O(n \times 2^n) ) 压缩到 ( O(2^n) ).</li>
 </ul>
 </li>
-<li><strong>稀疏存储</strong>：<ul>
+<li><strong>稀疏存储</strong>：
+<ul>
 <li>用字典或哈希表存储非零状态，适合记忆化递归。</li>
 </ul>
 </li>
 </ul>
-<h3 id="2-4-调试与优化"><a href="#2-4-调试与优化" class="headerlink" title="2.4 调试与优化"></a>2.4 调试与优化</h3><ul>
-<li><strong>调试</strong>：<ul>
+<h3 id="2.4-%E8%B0%83%E8%AF%95%E4%B8%8E%E4%BC%98%E5%8C%96" tabindex="-1">2.4 调试与优化</h3>
+<ul>
+<li><strong>调试</strong>：
+<ul>
 <li>打印 DP 表格，验证状态转移。</li>
 <li>检查边界条件和初始值。</li>
 <li>用小数据手动模拟，确保逻辑正确。</li>
 </ul>
 </li>
-<li><strong>优化</strong>：<ul>
-<li><strong>快速 I&#x2F;O</strong>：Python 用 <code>sys.stdin.readline</code> 加速输入。</li>
+<li><strong>优化</strong>：
+<ul>
+<li><strong>快速 I/O</strong>：Python 用 <code>sys.stdin.readline</code> 加速输入。</li>
 <li><strong>常数优化</strong>：减少循环内操作，如提前计算常量。</li>
 <li><strong>并行化</strong>：复杂 DP 可分块并行（非比赛场景）。</li>
-<li><strong>Cython&#x2F;Numba</strong>：加速 Python 循环（非比赛场景）。</li>
+<li><strong>Cython/Numba</strong>：加速 Python 循环（非比赛场景）。</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h2 id="3-在-ACM-竞赛中的应用"><a href="#3-在-ACM-竞赛中的应用" class="headerlink" title="3. 在 ACM 竞赛中的应用"></a>3. 在 ACM 竞赛中的应用</h2><p>DP 在 ACM 竞赛中是解决优化和计数问题的核心工具，因其 <strong>通用性</strong> 和 <strong>高效性</strong> 广泛应用于各种题型。以下是常见类型和解题思路：</p>
+<h2 id="3.-%E5%9C%A8-acm-%E7%AB%9E%E8%B5%9B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8" tabindex="-1">3. 在 ACM 竞赛中的应用</h2>
+<p>DP 在 ACM 竞赛中是解决优化和计数问题的核心工具，因其 <strong>通用性</strong> 和 <strong>高效性</strong> 广泛应用于各种题型。以下是常见类型和解题思路：</p>
 <ol>
-<li><strong>线性 DP</strong>：<ul>
+<li><strong>线性 DP</strong>：
+<ul>
 <li><strong>题目</strong>：求序列的最优解，如最长递增子序列（LIS）。</li>
 <li><strong>解法</strong>：定义 ( dp[i] ) 为以 ( i ) 结尾的最优解，转移考虑前序状态。</li>
 <li><strong>示例</strong>：Luogu P1020（导弹拦截，LIS）。</li>
-<li><strong>方法</strong>：<ul>
+<li><strong>方法</strong>：
+<ul>
 <li>状态：( dp[i] ) 表示以 ( a[i] ) 结尾的 LIS 长度。</li>
-<li>转移：( dp[i] &#x3D; \max(dp[j]) + 1 )，其中 ( j &lt; i )，( a[j] &lt; a[i] ).</li>
+<li>转移：( dp[i] = \max(dp[j]) + 1 )，其中 ( j &lt; i )，( a[j] &lt; a[i] ).</li>
 <li>复杂度：( O(n^2) )，可优化到 ( O(n \log n) )（二分）。</li>
 </ul>
 </li>
 <li><strong>Python 优势</strong>：列表操作简洁，调试方便。</li>
 </ul>
 </li>
-<li><strong>背包 DP</strong>：<ul>
+<li><strong>背包 DP</strong>：
+<ul>
 <li><strong>题目</strong>：资源分配，如 0-1 背包、完全背包。</li>
 <li><strong>解法</strong>：定义 ( dp[i][j] ) 为前 ( i ) 项容量 ( j ) 的最优解，转移考虑是否选择当前项。</li>
 <li><strong>示例</strong>：Luogu P1048（采药，0-1 背包）。</li>
-<li><strong>方法</strong>：<ul>
+<li><strong>方法</strong>：
+<ul>
 <li>状态：( dp[i][j] ) 表示前 ( i ) 种草药，容量 ( j ) 的最大价值。</li>
-<li>转移：( dp[i][j] &#x3D; \max(dp[i-1][j], dp[i-1][j-w[i]] + v[i]) ).</li>
+<li>转移：( dp[i][j] = \max(dp[i-1][j], dp[i-1][j-w[i]] + v[i]) ).</li>
 <li>滚动数组：优化到 ( dp[j] )，空间 ( O(W) ).</li>
 </ul>
 </li>
 <li><strong>Python 优势</strong>：数组操作直观，滚动数组实现简单。</li>
 </ul>
 </li>
-<li><strong>区间 DP</strong>：<ul>
+<li><strong>区间 DP</strong>：
+<ul>
 <li><strong>题目</strong>：处理区间合并或分割，如石子合并。</li>
 <li><strong>解法</strong>：定义 ( dp[l][r] ) 为区间 ( [l, r] ) 的最优解，转移枚举分割点。</li>
 <li><strong>示例</strong>：Luogu P1880（石子合并）。</li>
-<li><strong>方法</strong>：<ul>
+<li><strong>方法</strong>：
+<ul>
 <li>状态：( dp[l][r] ) 表示合并 ( [l, r] ) 石子的最小代价。</li>
-<li>转移：( dp[l][r] &#x3D; \min(dp[l][k] + dp[k+1][r] + \text{sum}[l,r]) )，( k \in [l, r-1] ).</li>
+<li>转移：( dp[l][r] = \min(dp[l][k] + dp[k+1][r] + \text{sum}[l,r]) )，( k \in [l, r-1] ).</li>
 <li>复杂度：( O(n^3) ).</li>
 </ul>
 </li>
 <li><strong>Python 优势</strong>：二维数组操作简洁，调试区间状态方便。</li>
 </ul>
 </li>
-<li><strong>树形 DP</strong>：<ul>
+<li><strong>树形 DP</strong>：
+<ul>
 <li><strong>题目</strong>：树上优化，如最小支配集。</li>
 <li><strong>解法</strong>：定义 ( dp[u][s] ) 为节点 ( u ) 在状态 ( s ) 下的最优解，递归转移。</li>
 <li><strong>示例</strong>：Luogu P1352（没有上司的舞会）。</li>
-<li><strong>方法</strong>：<ul>
-<li>状态：( dp[u][0&#x2F;1] ) 表示节点 ( u ) 不选&#x2F;选的最大快乐值。</li>
-<li>转移：( dp[u][0] &#x3D; \sum \max(dp[v][0], dp[v][1]) )，( dp[u][1] &#x3D; r[u] + \sum dp[v][0] ).</li>
+<li><strong>方法</strong>：
+<ul>
+<li>状态：( dp[u][0/1] ) 表示节点 ( u ) 不选/选的最大快乐值。</li>
+<li>转移：( dp[u][0] = \sum \max(dp[v][0], dp[v][1]) )，( dp[u][1] = r[u] + \sum dp[v][0] ).</li>
 <li>复杂度：( O(n) ).</li>
 </ul>
 </li>
 <li><strong>Python 优势</strong>：递归实现直观，邻接表管理树结构。</li>
 </ul>
 </li>
-<li><strong>状态压缩 DP</strong>：<ul>
+<li><strong>状态压缩 DP</strong>：
+<ul>
 <li><strong>题目</strong>：小规模集合优化，如 TSP、棋盘覆盖。</li>
 <li><strong>解法</strong>：用二进制表示状态，转移枚举子集。</li>
 <li><strong>示例</strong>：POJ 1185（炮兵阵地）。</li>
-<li><strong>方法</strong>：<ul>
+<li><strong>方法</strong>：
+<ul>
 <li>状态：( dp[i][s][t] ) 表示第 ( i ) 行，当前状态 ( s )，前一行状态 ( t )。</li>
 <li>转移：枚举合法状态，检查兼容性。</li>
 <li>复杂度：( O(n \times 2^m \times 2^m) )，( m ) 为列数。</li>
@@ -487,42 +571,50 @@
 <li><strong>Python 优势</strong>：位运算简洁，调试状态转换方便。</li>
 </ul>
 </li>
-<li><strong>数位 DP</strong>：<ul>
+<li><strong>数位 DP</strong>：
+<ul>
 <li><strong>题目</strong>：数字范围计数，如满足条件的数字个数。</li>
 <li><strong>解法</strong>：定义 ( dp[pos][state] ) 为前 ( pos ) 位在某状态下的方案数，递归转移。</li>
 <li><strong>示例</strong>：Luogu P2657（Scenic Number）。</li>
-<li><strong>方法</strong>：<ul>
+<li><strong>方法</strong>：
+<ul>
 <li>状态：( dp[pos][prev][lead] ) 表示第 ( pos ) 位，前一位数字，是否前导零。</li>
 <li>转移：枚举当前位数字，检查条件。</li>
 <li>复杂度：( O(\log n \times \text{状态数}) ).</li>
 </ul>
 </li>
-<li><strong>Python 优势</strong>：记忆化递归简洁，调试状态直观。<br><strong>ACM 优化技巧</strong>：</li>
+<li><strong>Python 优势</strong>：记忆化递归简洁，调试状态直观。<br>
+<strong>ACM 优化技巧</strong>：</li>
 </ul>
 </li>
 </ol>
 <ul>
-<li><strong>快速 I&#x2F;O</strong>：Python 用 <code>sys.stdin.readline</code> 加速输入。</li>
+<li><strong>快速 I/O</strong>：Python 用 <code>sys.stdin.readline</code> 加速输入。</li>
 <li><strong>滚动数组</strong>：背包、区间 DP 优化空间到 ( O(\min(n, m)) ).</li>
 <li><strong>状态压缩</strong>：用位运算减少状态空间。</li>
 <li><strong>边界处理</strong>：注意空状态、负索引、越界。</li>
-<li><strong>调试</strong>：打印 DP 表格或递归路径，验证转移。<br><strong>Python 在 ACM 中的适用性</strong>：</li>
-<li><strong>优点</strong>：<ul>
+<li><strong>调试</strong>：打印 DP 表格或递归路径，验证转移。<br>
+<strong>Python 在 ACM 中的适用性</strong>：</li>
+<li><strong>优点</strong>：
+<ul>
 <li>简洁：Python 实现 DP 约 50-100 行，比赛中 10-20 分钟完成。</li>
 <li>调试：<code>print</code> DP 表格或状态，验证正确性。</li>
 <li>适用：( n \leq 10^5 )，时间限制 ≥ 1 秒，Python 通常通过。</li>
 </ul>
 </li>
-<li><strong>缺点</strong>：<ul>
+<li><strong>缺点</strong>：
+<ul>
 <li>效率：Python 比 C++ 慢 5-10 倍，复杂 DP 可能 TLE。</li>
 <li>内存：Python 数组和递归占用较多内存。</li>
 <li>严格限制：( n \geq 10^6 ) 或时间 &lt; 1 秒，可能 TLE。</li>
 </ul>
 </li>
-<li><strong>优化</strong>：<ul>
+<li><strong>优化</strong>：
+<ul>
 <li>用 <code>array</code> 存储 DP 表格，减少内存。</li>
 <li>迭代实现，降低递归开销。</li>
-<li>预处理输入，减少 I&#x2F;O 瓶颈。<br><strong>ACM 题目推荐</strong>：</li>
+<li>预处理输入，减少 I/O 瓶颈。<br>
+<strong>ACM 题目推荐</strong>：</li>
 </ul>
 </li>
 <li>Luogu P1020：导弹拦截（LIS）。</li>
@@ -533,163 +625,205 @@
 <li>Luogu P2657：Scenic Number（数位 DP）。</li>
 </ul>
 <hr>
-<h2 id="4-Python-实现"><a href="#4-Python-实现" class="headerlink" title="4. Python 实现"></a>4. Python 实现</h2><p>以下是几种典型 DP 问题的 Python 实现，包含递推和记忆化递归，带详细注释，适合 ACM 竞赛快速部署。</p>
-<h3 id="4-1-0-1-背包（递推）"><a href="#4-1-0-1-背包（递推）" class="headerlink" title="4.1 0-1 背包（递推）"></a>4.1 0-1 背包（递推）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">knapsack</span>(<span class="params">n: <span class="built_in">int</span>, W: <span class="built_in">int</span>, w: <span class="built_in">list</span>, v: <span class="built_in">list</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;0-1 背包：n 物品，容量 W，重量 w[i]，价值 v[i]，求最大价值&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># dp[j] 表示容量 j 的最大价值</span></span><br><span class="line">    dp = [<span class="number">0</span>] * (W + <span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 枚举物品</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="comment"># 逆序枚举容量（滚动数组）</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(W, w[i] - <span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            dp[j] = <span class="built_in">max</span>(dp[j], dp[j - w[i]] + v[i])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp[W]</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">n, W = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">w, v = [], []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    wi, vi = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">    w.append(wi)</span><br><span class="line">    v.append(vi)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;0-1 Knapsack:&quot;</span>, knapsack(n, W, w, v))</span><br></pre></td></tr></table></figure>
-<h3 id="4-2-最长公共子序列（记忆化递归）"><a href="#4-2-最长公共子序列（记忆化递归）" class="headerlink" title="4.2 最长公共子序列（记忆化递归）"></a>4.2 最长公共子序列（记忆化递归）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lcs</span>(<span class="params">A: <span class="built_in">str</span>, B: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;最长公共子序列：字符串 A 和 B 的 LCS 长度&quot;&quot;&quot;</span></span><br><span class="line">    m, n = <span class="built_in">len</span>(A), <span class="built_in">len</span>(B)</span><br><span class="line">    memo = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">i: <span class="built_in">int</span>, j: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> (i, j) <span class="keyword">in</span> memo:</span><br><span class="line">            <span class="keyword">return</span> memo[(i, j)]</span><br><span class="line">        <span class="keyword">if</span> A[i-<span class="number">1</span>] == B[j-<span class="number">1</span>]:</span><br><span class="line">            memo[(i, j)] = dp(i-<span class="number">1</span>, j-<span class="number">1</span>) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            memo[(i, j)] = <span class="built_in">max</span>(dp(i-<span class="number">1</span>, j), dp(i, j-<span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> memo[(i, j)]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp(m, n)</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">A = <span class="built_in">input</span>().strip()</span><br><span class="line">B = <span class="built_in">input</span>().strip()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;LCS Length:&quot;</span>, lcs(A, B))</span><br></pre></td></tr></table></figure>
-<h3 id="4-3-石子合并（区间-DP，递推）"><a href="#4-3-石子合并（区间-DP，递推）" class="headerlink" title="4.3 石子合并（区间 DP，递推）"></a>4.3 石子合并（区间 DP，递推）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">stone_merge</span>(<span class="params">n: <span class="built_in">int</span>, a: <span class="built_in">list</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;石子合并：n 堆石子，合并成一堆的最小代价&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 前缀和</span></span><br><span class="line">    s = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        s[i + <span class="number">1</span>] = s[i] + a[i]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># dp[l][r] 表示合并 [l, r] 的最小代价</span></span><br><span class="line">    dp = [[<span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)] * n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        dp[i][i] = <span class="number">0</span>  <span class="comment"># 单堆无需合并</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 枚举区间长度</span></span><br><span class="line">    <span class="keyword">for</span> length <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">        <span class="comment"># 枚举左端点</span></span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(n - length + <span class="number">1</span>):</span><br><span class="line">            r = l + length - <span class="number">1</span></span><br><span class="line">            <span class="comment"># 枚举分割点</span></span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(l, r):</span><br><span class="line">                dp[l][r] = <span class="built_in">min</span>(dp[l][r], dp[l][k] + dp[k+<span class="number">1</span>][r] + s[r+<span class="number">1</span>] - s[l])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][n-<span class="number">1</span>]</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Stone Merge Cost:&quot;</span>, stone_merge(n, a))</span><br></pre></td></tr></table></figure>
+<h2 id="4.-python-%E5%AE%9E%E7%8E%B0" tabindex="-1">4. Python 实现</h2>
+<p>以下是几种典型 DP 问题的 Python 实现，包含递推和记忆化递归，带详细注释，适合 ACM 竞赛快速部署。</p>
+<h3 id="4.1-0-1-%E8%83%8C%E5%8C%85%EF%BC%88%E9%80%92%E6%8E%A8%EF%BC%89" tabindex="-1">4.1 0-1 背包（递推）</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">knapsack</span>(<span class="params">n: <span class="built_in">int</span>, W: <span class="built_in">int</span>, w: <span class="built_in">list</span>, v: <span class="built_in">list</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;0-1 背包：n 物品，容量 W，重量 w[i]，价值 v[i]，求最大价值&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># dp[j] 表示容量 j 的最大价值</span></span><br><span class="line">    dp = [<span class="number">0</span>] * (W + <span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 枚举物品</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="comment"># 逆序枚举容量（滚动数组）</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(W, w[i] - <span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            dp[j] = <span class="built_in">max</span>(dp[j], dp[j - w[i]] + v[i])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp[W]</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">n, W = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">w, v = [], []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    wi, vi = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">    w.append(wi)</span><br><span class="line">    v.append(vi)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;0-1 Knapsack:&quot;</span>, knapsack(n, W, w, v))</span><br></pre></td></tr></table></figure>
+<h3 id="4.2-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88%E8%AE%B0%E5%BF%86%E5%8C%96%E9%80%92%E5%BD%92%EF%BC%89" tabindex="-1">4.2 最长公共子序列（记忆化递归）</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lcs</span>(<span class="params">A: <span class="built_in">str</span>, B: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;最长公共子序列：字符串 A 和 B 的 LCS 长度&quot;&quot;&quot;</span></span><br><span class="line">    m, n = <span class="built_in">len</span>(A), <span class="built_in">len</span>(B)</span><br><span class="line">    memo = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">i: <span class="built_in">int</span>, j: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> (i, j) <span class="keyword">in</span> memo:</span><br><span class="line">            <span class="keyword">return</span> memo[(i, j)]</span><br><span class="line">        <span class="keyword">if</span> A[i-<span class="number">1</span>] == B[j-<span class="number">1</span>]:</span><br><span class="line">            memo[(i, j)] = dp(i-<span class="number">1</span>, j-<span class="number">1</span>) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            memo[(i, j)] = <span class="built_in">max</span>(dp(i-<span class="number">1</span>, j), dp(i, j-<span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> memo[(i, j)]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp(m, n)</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">A = <span class="built_in">input</span>().strip()</span><br><span class="line">B = <span class="built_in">input</span>().strip()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;LCS Length:&quot;</span>, lcs(A, B))</span><br></pre></td></tr></table></figure>
+<h3 id="4.3-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6%EF%BC%88%E5%8C%BA%E9%97%B4-dp%EF%BC%8C%E9%80%92%E6%8E%A8%EF%BC%89" tabindex="-1">4.3 石子合并（区间 DP，递推）</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">stone_merge</span>(<span class="params">n: <span class="built_in">int</span>, a: <span class="built_in">list</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;石子合并：n 堆石子，合并成一堆的最小代价&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 前缀和</span></span><br><span class="line">    s = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        s[i + <span class="number">1</span>] = s[i] + a[i]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># dp[l][r] 表示合并 [l, r] 的最小代价</span></span><br><span class="line">    dp = [[<span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)] * n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        dp[i][i] = <span class="number">0</span>  <span class="comment"># 单堆无需合并</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 枚举区间长度</span></span><br><span class="line">    <span class="keyword">for</span> length <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">        <span class="comment"># 枚举左端点</span></span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(n - length + <span class="number">1</span>):</span><br><span class="line">            r = l + length - <span class="number">1</span></span><br><span class="line">            <span class="comment"># 枚举分割点</span></span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(l, r):</span><br><span class="line">                dp[l][r] = <span class="built_in">min</span>(dp[l][r], dp[l][k] + dp[k+<span class="number">1</span>][r] + s[r+<span class="number">1</span>] - s[l])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][n-<span class="number">1</span>]</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Stone Merge Cost:&quot;</span>, stone_merge(n, a))</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="5-运行过程"><a href="#5-运行过程" class="headerlink" title="5. 运行过程"></a>5. 运行过程</h2><h3 id="5-1-0-1-背包"><a href="#5-1-0-1-背包" class="headerlink" title="5.1 0-1 背包"></a>5.1 0-1 背包</h3><p><strong>输入</strong>：</p>
+<h2 id="5.-%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B" tabindex="-1">5. 运行过程</h2>
+<h3 id="5.1-0-1-%E8%83%8C%E5%8C%85" tabindex="-1">5.1 0-1 背包</h3>
+<p><strong>输入</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">2 3</span><br><span class="line">1 2</span><br><span class="line">3 4</span><br><span class="line">2 2</span><br></pre></td></tr></table></figure>
 <ul>
-<li>( n&#x3D;4 )，( W&#x3D;5 )，物品：( (w_1&#x3D;2, v_1&#x3D;3) ), ( (w_2&#x3D;1, v_2&#x3D;2) ), ( (w_3&#x3D;3, v_3&#x3D;4) ), ( (w_4&#x3D;2, v_4&#x3D;2) ).<br><strong>步骤</strong>：</li>
-<li>初始化：( dp &#x3D; [0, 0, 0, 0, 0, 0] ).</li>
-<li>物品 1 (( w_1&#x3D;2, v_1&#x3D;3 ))：<ul>
-<li>( j&#x3D;5 \to 2 ): ( dp[5] &#x3D; \max(0, dp[3]+3)&#x3D;3 ), …, ( dp[2] &#x3D; 3 ).</li>
-<li>( dp &#x3D; [0, 0, 3, 0, 0, 3] ).</li>
+<li>( n=4 )，( W=5 )，物品：( (w_1=2, v_1=3) ), ( (w_2=1, v_2=2) ), ( (w_3=3, v_3=4) ), ( (w_4=2, v_4=2) ).<br>
+<strong>步骤</strong>：</li>
+<li>初始化：( dp = [0, 0, 0, 0, 0, 0] ).</li>
+<li>物品 1 (( w_1=2, v_1=3 ))：
+<ul>
+<li>( j=5 \to 2 ): ( dp[5] = \max(0, dp[3]+3)=3 ), …, ( dp[2] = 3 ).</li>
+<li>( dp = [0, 0, 3, 0, 0, 3] ).</li>
 </ul>
 </li>
-<li>物品 2 (( w_2&#x3D;1, v_2&#x3D;2 ))：<ul>
-<li>( j&#x3D;5 \to 1 ): ( dp[5] &#x3D; \max(3, dp[4]+2)&#x3D;3 ), …, ( dp[1] &#x3D; 2 ).</li>
-<li>( dp &#x3D; [0, 2, 3, 5, 2, 3] ).</li>
+<li>物品 2 (( w_2=1, v_2=2 ))：
+<ul>
+<li>( j=5 \to 1 ): ( dp[5] = \max(3, dp[4]+2)=3 ), …, ( dp[1] = 2 ).</li>
+<li>( dp = [0, 2, 3, 5, 2, 3] ).</li>
 </ul>
 </li>
-<li>物品 3 (( w_3&#x3D;3, v_3&#x3D;4 ))：<ul>
-<li>( j&#x3D;5 \to 3 ): ( dp[5] &#x3D; \max(3, dp[2]+4)&#x3D;7 ), …, ( dp[3] &#x3D; 5 ).</li>
-<li>( dp &#x3D; [0, 2, 3, 5, 6, 7] ).</li>
+<li>物品 3 (( w_3=3, v_3=4 ))：
+<ul>
+<li>( j=5 \to 3 ): ( dp[5] = \max(3, dp[2]+4)=7 ), …, ( dp[3] = 5 ).</li>
+<li>( dp = [0, 2, 3, 5, 6, 7] ).</li>
 </ul>
 </li>
-<li>物品 4 (( w_4&#x3D;2, v_4&#x3D;2 ))：<ul>
-<li>( j&#x3D;5 \to 2 ): ( dp[5] &#x3D; \max(7, dp[3]+2)&#x3D;7 ), …, ( dp[2] &#x3D; 3 ).</li>
-<li>( dp &#x3D; [0, 2, 3, 5, 6, 7] ).</li>
+<li>物品 4 (( w_4=2, v_4=2 ))：
+<ul>
+<li>( j=5 \to 2 ): ( dp[5] = \max(7, dp[3]+2)=7 ), …, ( dp[2] = 3 ).</li>
+<li>( dp = [0, 2, 3, 5, 6, 7] ).</li>
 </ul>
 </li>
-<li>结果：( dp[5] &#x3D; 7 ).<br><strong>输出</strong>：</li>
+<li>结果：( dp[5] = 7 ).<br>
+<strong>输出</strong>：</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0-1 Knapsack: 7</span><br></pre></td></tr></table></figure>
-<h3 id="5-2-最长公共子序列"><a href="#5-2-最长公共子序列" class="headerlink" title="5.2 最长公共子序列"></a>5.2 最长公共子序列</h3><p><strong>输入</strong>：</p>
+<h3 id="5.2-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97" tabindex="-1">5.2 最长公共子序列</h3>
+<p><strong>输入</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ABCD</span><br><span class="line">BECAD</span><br></pre></td></tr></table></figure>
 <ul>
-<li>字符串 ( A &#x3D; “ABCD” )，( B &#x3D; “BECAD” ).<br><strong>步骤</strong>：</li>
-<li>记忆化递归：<ul>
-<li>( dp(4, 5) ): ( A[3]&#x3D;D ), ( B[4]&#x3D;D ), 相等，( dp(4, 5) &#x3D; dp(3, 4) + 1 ).</li>
-<li>( dp(3, 4) ): ( A[2]&#x3D;C ), ( B[3]&#x3D;A ), 不等，( dp(3, 4) &#x3D; \max(dp(2, 4), dp(3, 3)) ).</li>
-<li>( dp(2, 4) ): ( A[1]&#x3D;B ), ( B[3]&#x3D;A ), 不等，( dp(2, 4) &#x3D; \max(dp(1, 4), dp(2, 3)) ).</li>
+<li>字符串 ( A = “ABCD” )，( B = “BECAD” ).<br>
+<strong>步骤</strong>：</li>
+<li>记忆化递归：
+<ul>
+<li>( dp(4, 5) ): ( A[3]=D ), ( B[4]=D ), 相等，( dp(4, 5) = dp(3, 4) + 1 ).</li>
+<li>( dp(3, 4) ): ( A[2]=C ), ( B[3]=A ), 不等，( dp(3, 4) = \max(dp(2, 4), dp(3, 3)) ).</li>
+<li>( dp(2, 4) ): ( A[1]=B ), ( B[3]=A ), 不等，( dp(2, 4) = \max(dp(1, 4), dp(2, 3)) ).</li>
 <li>递归继续，计算所有状态。</li>
 </ul>
 </li>
-<li>最终：( dp(4, 5) &#x3D; 3 )（LCS 为 “BCD”）。</li>
+<li>最终：( dp(4, 5) = 3 )（LCS 为 “BCD”）。</li>
 <li>记忆化表格（部分）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   B E C A D</span><br><span class="line">A 0 0 0 0 0</span><br><span class="line">B 1 1 1 1 1</span><br><span class="line">C 1 1 2 2 2</span><br><span class="line">D 1 1 2 2 3</span><br></pre></td></tr></table></figure>
-<strong>输出</strong>：</li>
+</li>
 </ul>
+<p><strong>输出</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LCS Length: 3</span><br></pre></td></tr></table></figure>
-<h3 id="5-3-石子合并"><a href="#5-3-石子合并" class="headerlink" title="5.3 石子合并"></a>5.3 石子合并</h3><p><strong>输入</strong>：</p>
+<h3 id="5.3-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6" tabindex="-1">5.3 石子合并</h3>
+<p><strong>输入</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1 3 5 2</span><br></pre></td></tr></table></figure>
 <ul>
-<li>( n&#x3D;4 )，石子：( a &#x3D; [1, 3, 5, 2] ).<br><strong>步骤</strong>：</li>
-<li>前缀和：( s &#x3D; [0, 1, 4, 9, 11] ).</li>
-<li>初始化：( dp[i][i] &#x3D; 0 ).</li>
-<li>长度 2：<ul>
-<li>( dp[0][1] &#x3D; s[2]-s[0] &#x3D; 4 ).</li>
-<li>( dp[1][2] &#x3D; s[3]-s[1] &#x3D; 8 ).</li>
-<li>( dp[2][3] &#x3D; s[4]-s[2] &#x3D; 7 ).</li>
+<li>( n=4 )，石子：( a = [1, 3, 5, 2] ).<br>
+<strong>步骤</strong>：</li>
+<li>前缀和：( s = [0, 1, 4, 9, 11] ).</li>
+<li>初始化：( dp[i][i] = 0 ).</li>
+<li>长度 2：
+<ul>
+<li>( dp[0][1] = s[2]-s[0] = 4 ).</li>
+<li>( dp[1][2] = s[3]-s[1] = 8 ).</li>
+<li>( dp[2][3] = s[4]-s[2] = 7 ).</li>
 </ul>
 </li>
-<li>长度 3：<ul>
-<li>( dp[0][2] &#x3D; \min(dp[0][0]+dp[1][2], dp[0][1]+dp[2][2]) + s[3]-s[0] &#x3D; \min(0+8, 4+0)+9 &#x3D; 12 ).</li>
-<li>( dp[1][3] &#x3D; \min(dp[1][1]+dp[2][3], dp[1][2]+dp[3][3]) + s[4]-s[1] &#x3D; \min(0+7, 8+0)+10 &#x3D; 17 ).</li>
+<li>长度 3：
+<ul>
+<li>( dp[0][2] = \min(dp[0][0]+dp[1][2], dp[0][1]+dp[2][2]) + s[3]-s[0] = \min(0+8, 4+0)+9 = 12 ).</li>
+<li>( dp[1][3] = \min(dp[1][1]+dp[2][3], dp[1][2]+dp[3][3]) + s[4]-s[1] = \min(0+7, 8+0)+10 = 17 ).</li>
 </ul>
 </li>
-<li>长度 4：<ul>
-<li>( dp[0][3] &#x3D; \min(dp[0][k]+dp[k+1][3]+s[4]-s[0]) &#x3D; \min(0+17, 4+7, 12+0)+11 &#x3D; 18 ).</li>
+<li>长度 4：
+<ul>
+<li>( dp[0][3] = \min(dp[0][k]+dp[k+1][3]+s[4]-s[0]) = \min(0+17, 4+7, 12+0)+11 = 18 ).</li>
 </ul>
 </li>
-<li>结果：( dp[0][3] &#x3D; 18 ).<br><strong>输出</strong>：</li>
+<li>结果：( dp[0][3] = 18 ).<br>
+<strong>输出</strong>：</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stone Merge Cost: 18</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="6-DP-的优缺点"><a href="#6-DP-的优缺点" class="headerlink" title="6. DP 的优缺点"></a>6. DP 的优缺点</h2><h3 id="6-1-优点"><a href="#6-1-优点" class="headerlink" title="6.1 优点"></a>6.1 优点</h3><ul>
+<h2 id="6.-dp-%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9" tabindex="-1">6. DP 的优缺点</h2>
+<h3 id="6.1-%E4%BC%98%E7%82%B9" tabindex="-1">6.1 优点</h3>
+<ul>
 <li><strong>高效性</strong>：将指数复杂度降为多项式（如斐波那契从 ( O(2^n) ) 到 ( O(n) )）。</li>
 <li><strong>通用性</strong>：适用于优化、计数、概率等多种问题。</li>
 <li><strong>ACM 友好</strong>：Python 实现简洁，约 50-100 行，比赛中 10-20 分钟完成。</li>
 <li><strong>可优化</strong>：滚动数组、状态压缩显著降低空间复杂度。</li>
 <li><strong>调试方便</strong>：DP 表格直观，易于验证。</li>
 </ul>
-<h3 id="6-2-缺点"><a href="#6-2-缺点" class="headerlink" title="6.2 缺点"></a>6.2 缺点</h3><ul>
+<h3 id="6.2-%E7%BC%BA%E7%82%B9" tabindex="-1">6.2 缺点</h3>
+<ul>
 <li><strong>状态设计复杂</strong>：需要准确定义状态和转移，初学者易出错。</li>
 <li><strong>空间限制</strong>：多维 DP 可能占用大量内存。</li>
-<li><strong>ACM 限制</strong>：<ul>
+<li><strong>ACM 限制</strong>：
+<ul>
 <li>大输入（( n \geq 10^6 )）或时间 &lt; 1 秒，Python 可能 TLE。</li>
 <li>复杂状态压缩或数位 DP 实现难度高。</li>
 </ul>
 </li>
 <li><strong>依赖经验</strong>：状态转移方程推导需熟练，比赛中时间紧迫。</li>
 </ul>
-<h3 id="6-3-改进方向"><a href="#6-3-改进方向" class="headerlink" title="6.3 改进方向"></a>6.3 改进方向</h3><ul>
+<h3 id="6.3-%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91" tabindex="-1">6.3 改进方向</h3>
+<ul>
 <li><strong>滚动数组</strong>：优化空间到 ( O(\min(n, m)) ).</li>
 <li><strong>状态压缩</strong>：用位运算减少状态数。</li>
 <li><strong>迭代实现</strong>：将记忆化递归转为递推，降低递归开销。</li>
-<li><strong>快速 I&#x2F;O</strong>：优化 Python 输入输出。</li>
-<li><strong>Cython&#x2F;Numba</strong>：加速 Python 循环（非比赛场景）。</li>
+<li><strong>快速 I/O</strong>：优化 Python 输入输出。</li>
+<li><strong>Cython/Numba</strong>：加速 Python 循环（非比赛场景）。</li>
 </ul>
 <hr>
-<h2 id="7-与其他方法的对比"><a href="#7-与其他方法的对比" class="headerlink" title="7. 与其他方法的对比"></a>7. 与其他方法的对比</h2><h3 id="7-1-与贪心算法"><a href="#7-1-与贪心算法" class="headerlink" title="7.1 与贪心算法"></a>7.1 与贪心算法</h3><ul>
-<li><strong>目标</strong>：<ul>
+<h2 id="7.-%E4%B8%8E%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94" tabindex="-1">7. 与其他方法的对比</h2>
+<h3 id="7.1-%E4%B8%8E%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95" tabindex="-1">7.1 与贪心算法</h3>
+<ul>
+<li><strong>目标</strong>：
+<ul>
 <li>贪心：局部最优，快速决策。</li>
 <li>DP：全局最优，考虑所有可能。</li>
 </ul>
 </li>
-<li><strong>适用性</strong>：<ul>
+<li><strong>适用性</strong>：
+<ul>
 <li>贪心：活动选择、Huffman 编码。</li>
 <li>DP：0-1 背包、LCS。</li>
 </ul>
 </li>
-<li><strong>ACM 适用性</strong>：<ul>
+<li><strong>ACM 适用性</strong>：
+<ul>
 <li>贪心：简单问题，Python 实现快。</li>
 <li>DP：复杂优化问题，Python 通用。</li>
 </ul>
 </li>
-<li><strong>Python 实现</strong>：<ul>
+<li><strong>Python 实现</strong>：
+<ul>
 <li>贪心：代码短，逻辑简单。</li>
 <li>DP：代码稍长，状态设计复杂。</li>
 </ul>
 </li>
 </ul>
-<h3 id="7-2-与分治算法"><a href="#7-2-与分治算法" class="headerlink" title="7.2 与分治算法"></a>7.2 与分治算法</h3><ul>
-<li><strong>目标</strong>：<ul>
+<h3 id="7.2-%E4%B8%8E%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95" tabindex="-1">7.2 与分治算法</h3>
+<ul>
+<li><strong>目标</strong>：
+<ul>
 <li>分治：分解为独立子问题。</li>
 <li>DP：分解为重叠子问题。</li>
 </ul>
 </li>
-<li><strong>适用性</strong>：<ul>
+<li><strong>适用性</strong>：
+<ul>
 <li>分治：归并排序、快速排序。</li>
 <li>DP：LIS、背包问题。</li>
 </ul>
 </li>
-<li><strong>ACM 适用性</strong>：<ul>
+<li><strong>ACM 适用性</strong>：
+<ul>
 <li>分治：分治 + 递归，适合无重叠问题。</li>
 <li>DP：优化重叠子问题，适合序列、图。</li>
 </ul>
 </li>
-<li><strong>Python 实现</strong>：<ul>
+<li><strong>Python 实现</strong>：
+<ul>
 <li>分治：递归简洁，但可能重复计算。</li>
 <li>DP：存储优化，效率更高。</li>
 </ul>
 </li>
 </ul>
-<h3 id="7-3-与数据结构结合"><a href="#7-3-与数据结构结合" class="headerlink" title="7.3 与数据结构结合"></a>7.3 与数据结构结合</h3><ul>
-<li><strong>DP + 线段树</strong>：<ul>
+<h3 id="7.3-%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BB%93%E5%90%88" tabindex="-1">7.3 与数据结构结合</h3>
+<ul>
+<li><strong>DP + 线段树</strong>：
+<ul>
 <li>题目：动态区间优化。</li>
 <li>解法：DP 定义状态，线段树维护区间最优值。</li>
 <li>示例：Codeforces 474E（Pillars，LIS + 线段树）。</li>
 </ul>
 </li>
-<li><strong>DP + 单调队列&#x2F;栈</strong>：<ul>
+<li><strong>DP + 单调队列/栈</strong>：
+<ul>
 <li>题目：序列优化。</li>
 <li>解法：单调队列维护 DP 转移的最优候选。</li>
 <li>示例：Luogu P1725（琪露诺，单调队列 DP）。</li>
 </ul>
 </li>
-<li><strong>DP + 树</strong>：<ul>
+<li><strong>DP + 树</strong>：
+<ul>
 <li>题目：树上优化。</li>
 <li>解法：树形 DP 递归转移。</li>
 <li>示例：Luogu P1352（没有上司的舞会）。</li>
@@ -697,21 +831,28 @@
 </li>
 </ul>
 <hr>
-<h2 id="8-模拟运行过程（补充数位-DP）"><a href="#8-模拟运行过程（补充数位-DP）" class="headerlink" title="8. 模拟运行过程（补充数位 DP）"></a>8. 模拟运行过程（补充数位 DP）</h2><h3 id="8-1-数位-DP"><a href="#8-1-数位-DP" class="headerlink" title="8.1 数位 DP"></a>8.1 数位 DP</h3><p><strong>问题</strong>：统计区间 ([L, R]) 内，数字各位之和为 ( K ) 的数的个数。<br><strong>代码</strong>：</p>
+<h2 id="8.-%E6%A8%A1%E6%8B%9F%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B%EF%BC%88%E8%A1%A5%E5%85%85%E6%95%B0%E4%BD%8D-dp%EF%BC%89" tabindex="-1">8. 模拟运行过程（补充数位 DP）</h2>
+<h3 id="8.1-%E6%95%B0%E4%BD%8D-dp" tabindex="-1">8.1 数位 DP</h3>
+<p><strong>问题</strong>：统计区间 ([L, R]) 内，数字各位之和为 ( K ) 的数的个数。<br>
+<strong>代码</strong>：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">input</span> = sys.stdin.readline</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">digit_dp</span>(<span class="params">L: <span class="built_in">int</span>, R: <span class="built_in">int</span>, K: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;数位 DP：统计 [L, R] 内各位和为 K 的数的个数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">count</span>(<span class="params">num: <span class="built_in">str</span>, K: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(num)</span><br><span class="line">        memo = &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">pos: <span class="built_in">int</span>, <span class="built_in">sum</span>: <span class="built_in">int</span>, tight: <span class="built_in">bool</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            <span class="keyword">if</span> pos == n:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> <span class="built_in">sum</span> == K <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">sum</span> &gt; K:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> (pos, <span class="built_in">sum</span>, tight) <span class="keyword">in</span> memo:</span><br><span class="line">                <span class="keyword">return</span> memo[(pos, <span class="built_in">sum</span>, tight)]</span><br><span class="line">            </span><br><span class="line">            ans = <span class="number">0</span></span><br><span class="line">            limit = <span class="built_in">int</span>(num[pos]) <span class="keyword">if</span> tight <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(limit + <span class="number">1</span>):</span><br><span class="line">                new_tight = tight <span class="keyword">and</span> d == limit</span><br><span class="line">                ans += dp(pos + <span class="number">1</span>, <span class="built_in">sum</span> + d, new_tight)</span><br><span class="line">            </span><br><span class="line">            memo[(pos, <span class="built_in">sum</span>, tight)] = ans</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp(<span class="number">0</span>, <span class="number">0</span>, <span class="literal">True</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> count(<span class="built_in">str</span>(R), K) - count(<span class="built_in">str</span>(L-<span class="number">1</span>), K)</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">L, R, K = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Digit DP Count:&quot;</span>, digit_dp(L, R, K))</span><br></pre></td></tr></table></figure>
 <p><strong>输入</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 20 5</span><br></pre></td></tr></table></figure>
 <ul>
-<li>区间 ([1, 20])，各位和为 5.<br><strong>步骤</strong>：</li>
-<li>计算 ( \text{count}(20, 5) )：<ul>
-<li>( dp(0, 0, \text{True}) ):<ul>
-<li>枚举第一位 ( d&#x3D;0 \to 2 )：<ul>
-<li>( d&#x3D;1 ): ( dp(1, 1, \text{True}) ).</li>
-<li>( d&#x3D;2 ): ( dp(1, 2, \text{True}) ).</li>
+<li>区间 ([1, 20])，各位和为 5.<br>
+<strong>步骤</strong>：</li>
+<li>计算 ( \text{count}(20, 5) )：
+<ul>
+<li>( dp(0, 0, \text{True}) ):
+<ul>
+<li>枚举第一位 ( d=0 \to 2 )：
+<ul>
+<li>( d=1 ): ( dp(1, 1, \text{True}) ).</li>
+<li>( d=2 ): ( dp(1, 2, \text{True}) ).</li>
 </ul>
 </li>
-<li>( dp(1, 1, \text{True}) ): 第二位 ( d&#x3D;0 \to 0 )，( dp(2, 1+0, \text{True}) &#x3D; 0 )（sum&#x3D;1 &lt; 5）。</li>
-<li>( dp(1, 2, \text{True}) ): ( d&#x3D;0 )，( dp(2, 2+0, \text{True}) &#x3D; 0 )（sum&#x3D;2 &lt; 5）。</li>
+<li>( dp(1, 1, \text{True}) ): 第二位 ( d=0 \to 0 )，( dp(2, 1+0, \text{True}) = 0 )（sum=1 &lt; 5）。</li>
+<li>( dp(1, 2, \text{True}) ): ( d=0 )，( dp(2, 2+0, \text{True}) = 0 )（sum=2 &lt; 5）。</li>
 </ul>
 </li>
 <li>结果：0（20 各位和 ≠ 5）。</li>
@@ -719,28 +860,36 @@
 </li>
 <li>计算 ( \text{count}(0, 5) )：类似，0（无数字和 5）。</li>
 <li>枚举 ([1, 20])：和为 5 的数为 5, 14。</li>
-<li>结果：( 2 ).<br><strong>输出</strong>：</li>
+<li>结果：( 2 ).<br>
+<strong>输出</strong>：</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Digit DP Count: 2</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="9-总结"><a href="#9-总结" class="headerlink" title="9. 总结"></a>9. 总结</h2><p>动态规划是解决优化和计数问题的核心方法，通过状态设计和转移高效分解问题：</p>
+<h2 id="9.-%E6%80%BB%E7%BB%93" tabindex="-1">9. 总结</h2>
+<p>动态规划是解决优化和计数问题的核心方法，通过状态设计和转移高效分解问题：</p>
 <ul>
 <li><strong>核心性质</strong>：最优子结构、重叠子问题、无后效性。</li>
 <li><strong>编程方法</strong>：递推（自底向上）、记忆化递归（自顶向下）、空间优化。</li>
 <li><strong>ACM 应用</strong>：线性 DP、背包、区间 DP、树形 DP、状态压缩、数位 DP。</li>
 <li><strong>Python 实现</strong>：约 50-100 行，调试方便，适合 ( n \leq 10^5 )，时间 ≥ 1 秒。</li>
-<li><strong>优化</strong>：滚动数组、状态压缩、快速 I&#x2F;O。<br>通过 Python 代码和样例模拟，展示了 DP 的常见类型和运行过程。在 ACM 竞赛中，DP 是不可或缺的工具，Python 实现适合快速原型和中小规模问题。<br><strong>学习建议</strong>：</li>
+<li><strong>优化</strong>：滚动数组、状态压缩、快速 I/O。<br>
+通过 Python 代码和样例模拟，展示了 DP 的常见类型和运行过程。在 ACM 竞赛中，DP 是不可或缺的工具，Python 实现适合快速原型和中小规模问题。<br>
+<strong>学习建议</strong>：</li>
 </ul>
 <ol>
-<li><strong>手动模拟</strong>：用小数据（如 ( n&#x3D;4 )）画 DP 表格，推导转移。</li>
+<li><strong>手动模拟</strong>：用小数据（如 ( n=4 )）画 DP 表格，推导转移。</li>
 <li><strong>ACM 练习</strong>：尝试 Luogu P1020、P1048、P1880，用 Python 实现 DP。</li>
 <li><strong>深入扩展</strong>：学习单调队列 DP、斜率优化、凸包优化。</li>
-<li><strong>比赛策略</strong>：<ul>
+<li><strong>比赛策略</strong>：
+<ul>
 <li>优先 Python 快速实现，验证正确性。</li>
-<li>若 TLE，优化 I&#x2F;O 或切换 C++.<br>如果你有其他问题、需要优化 Python 代码、或想探讨 ACM 题目（如复杂 DP 优化、数据结构结合），请随时告诉我！</li>
+<li>若 TLE，优化 I/O 或切换 C++.<br>
+如果你有其他问题、需要优化 Python 代码、或想探讨 ACM 题目（如复杂 DP 优化、数据结构结合），请随时告诉我！</li>
 </ul>
 </li>
 </ol>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
 
       
     </div>
@@ -790,10 +939,6 @@
       <a href="/2025/09/13/%E7%BA%BF%E6%AE%B5%E6%A0%91/" title="线段树"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
-    
-    <li class="next">
-      <a href="/2025/09/09/hello-world/" title="Hello World"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
     
     
   </ul>
