@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>ubuntu common cmommand | meow~</title>
+  <meta name="description" content="🔹 1. 基础操作命令    功能 命令 说明     查看当前目录 pwd print working directory   列出文件 ls、ls -l、ls -a 加 -l 显示详细，加 -a 显示隐藏文件   切换目录 cd 目录名 cd .. 返回上一级，cd ~ 回家目录   创建目录 mkdir test 递归创建：mkdir -p a&#x2F;b&#x2F;c   创建文件 touch file.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu common cmommand">
+<meta property="og:url" content="https://borrowyourhuaji.github.io/2025/09/13/ubuntu-common-cmommand/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="🔹 1. 基础操作命令    功能 命令 说明     查看当前目录 pwd print working directory   列出文件 ls、ls -l、ls -a 加 -l 显示详细，加 -a 显示隐藏文件   切换目录 cd 目录名 cd .. 返回上一级，cd ~ 回家目录   创建目录 mkdir test 递归创建：mkdir -p a&#x2F;b&#x2F;c   创建文件 touch file.">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-09-13T15:37:46.000Z">
+<meta property="article:modified_time" content="2025-09-13T15:41:56.093Z">
+<meta property="article:author" content="borrowyourhuaji">
+<meta property="article:tag" content="service">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://borrowyourhuaji.github.io/2025/09/13/ubuntu-common-cmommand/index.html">
+  
+  
+    <link rel="icon" href="/favicon.gif" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/images/4%20(1).gif" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">borrowyourhuaji</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">😋</h3>
+        <small id="sign" class="text-muted hidden-xs hidden-sm"> 时而滑稽之，不亦说乎？</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <img src="/favicon.gif" alt="?">
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/service/" rel="tag">service</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/" rel="tag">文档、库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/service/" style="font-size: 13.5px;">service</a> <a href="/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/" style="font-size: 13px;">文档、库</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px;">算法</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/ubuntu-services-cmommand/" class="title">ubuntu services cmommand</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T15:42:12.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/ubuntu-common-cmommand/" class="title">ubuntu common cmommand</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T15:37:46.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/%E6%95%B0%E4%BD%8Ddp/" class="title">数位dp</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T15:00:51.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/yolo/" class="title">yolo</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T13:57:08.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="title">线段树</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T12:57:08.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-ubuntu-common-cmommand" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ubuntu common cmommand
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/09/13/ubuntu-common-cmommand/" class="article-date">
+	  <time datetime="2025-09-13T15:37:46.000Z" itemprop="datePublished">2025-09-13</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/service/" rel="tag">service</a>
+  </span>
+
+
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="%F0%9F%94%B9-1.-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4" tabindex="-1">🔹 1. 基础操作命令</h1>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查看当前目录</td>
+<td><code>pwd</code></td>
+<td>print working directory</td>
+</tr>
+<tr>
+<td>列出文件</td>
+<td><code>ls</code>、<code>ls -l</code>、<code>ls -a</code></td>
+<td>加 <code>-l</code> 显示详细，加 <code>-a</code> 显示隐藏文件</td>
+</tr>
+<tr>
+<td>切换目录</td>
+<td><code>cd 目录名</code></td>
+<td><code>cd ..</code> 返回上一级，<code>cd ~</code> 回家目录</td>
+</tr>
+<tr>
+<td>创建目录</td>
+<td><code>mkdir test</code></td>
+<td>递归创建：<code>mkdir -p a/b/c</code></td>
+</tr>
+<tr>
+<td>创建文件</td>
+<td><code>touch file.txt</code></td>
+<td>更新文件时间，若不存在就新建</td>
+</tr>
+<tr>
+<td>删除文件</td>
+<td><code>rm file.txt</code></td>
+<td>删除目录：<code>rm -r dirname</code></td>
+</tr>
+<tr>
+<td>拷贝</td>
+<td><code>cp a b</code></td>
+<td>拷贝文件；<code>cp -r dir1 dir2</code> 复制目录</td>
+</tr>
+<tr>
+<td>移动/重命名</td>
+<td><code>mv a b</code></td>
+<td>文件移动/改名</td>
+</tr>
+<tr>
+<td>查看文件内容</td>
+<td><code>cat file</code>、<code>less file</code>、<code>head file</code>、<code>tail file</code></td>
+<td><code>tail -f log.txt</code> 实时看日志</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="%F0%9F%94%B9-2.-%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90" tabindex="-1">🔹 2. 用户和权限</h1>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>当前用户</td>
+<td><code>whoami</code></td>
+<td></td>
+</tr>
+<tr>
+<td>切换用户</td>
+<td><code>su 用户名</code></td>
+<td></td>
+</tr>
+<tr>
+<td>临时管理员</td>
+<td><code>sudo 命令</code></td>
+<td></td>
+</tr>
+<tr>
+<td>修改权限</td>
+<td><code>chmod 755 file</code></td>
+<td>读/写/执行权限</td>
+</tr>
+<tr>
+<td>修改属主</td>
+<td><code>chown user:group file</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="%F0%9F%94%B9-3.-%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86-(ubuntu-apt)" tabindex="-1">🔹 3. 软件管理 (Ubuntu apt)</h1>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>更新源</td>
+<td><code>sudo apt update</code></td>
+<td>更新索引，不升级</td>
+</tr>
+<tr>
+<td>升级系统</td>
+<td><code>sudo apt upgrade</code></td>
+<td>升级已安装包</td>
+</tr>
+<tr>
+<td>安装软件</td>
+<td><code>sudo apt install 包名</code></td>
+<td></td>
+</tr>
+<tr>
+<td>卸载软件</td>
+<td><code>sudo apt remove 包名</code></td>
+<td></td>
+</tr>
+<tr>
+<td>搜索软件</td>
+<td><code>apt search 关键词</code></td>
+<td></td>
+</tr>
+<tr>
+<td>查看已安装</td>
+<td>`dpkg -l</td>
+<td>grep 包名`</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="%F0%9F%94%B9-4.-%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%B3%BB%E7%BB%9F" tabindex="-1">🔹 4. 进程和系统</h1>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查看进程</td>
+<td><code>ps aux</code>、<code>top</code>、<code>htop</code></td>
+<td></td>
+</tr>
+<tr>
+<td>杀进程</td>
+<td><code>kill -9 pid</code></td>
+<td></td>
+</tr>
+<tr>
+<td>系统状态</td>
+<td><code>uptime</code>（负载）、<code>free -h</code>（内存）、<code>df -h</code>（磁盘）、<code>du -sh</code>（目录大小）</td>
+<td></td>
+</tr>
+<tr>
+<td>网络</td>
+<td><code>ping baidu.com</code>、<code>curl ifconfig.me</code>（查看公网 IP）、<code>ss -tulpn</code>（监听端口）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="%F0%9F%94%B9-5.-wsl-%E4%B8%93%E5%B1%9E%E5%91%BD%E4%BB%A4%EF%BC%88%E5%9C%A8-windows-powershell-%2F-cmd-%E7%94%A8%EF%BC%89" tabindex="-1">🔹 5. WSL 专属命令（在 Windows PowerShell / CMD 用）</h1>
+<p>这些是 <strong>WSL 特有的</strong>，在 Windows 的命令行运行，而不是 Ubuntu 内：</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进入 WSL</td>
+<td><code>wsl</code></td>
+<td>默认发行版</td>
+</tr>
+<tr>
+<td>指定发行版</td>
+<td><code>wsl -d Ubuntu-22.04</code></td>
+<td></td>
+</tr>
+<tr>
+<td>查看已安装发行版</td>
+<td><code>wsl -l -v</code></td>
+<td></td>
+</tr>
+<tr>
+<td>运行 Linux 命令</td>
+<td><code>wsl ls -la</code></td>
+<td>在 Windows 下直接执行</td>
+</tr>
+<tr>
+<td>导入导出</td>
+<td><code>wsl --export</code> / <code>wsl --import</code></td>
+<td></td>
+</tr>
+<tr>
+<td>关闭</td>
+<td><code>wsl --shutdown</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="ubuntu-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%88%97%E8%A1%A8" tabindex="-1">Ubuntu 常用命令列表</h3>
+<h4 id="1.-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86%EF%BC%88file-%26-directory-management%EF%BC%89" tabindex="-1">1. 文件和目录管理（File &amp; Directory Management）</h4>
+<ul>
+<li><strong>ls</strong>: 显示当前目录的文件和文件夹列表。<br>
+示例: <code>ls -la</code> (显示隐藏文件和详细信息)。</li>
+<li><strong>cd</strong>: 切换当前工作目录。<br>
+示例: <code>cd /home</code> (进入 home 目录)。</li>
+<li><strong>pwd</strong>: 显示当前工作目录的绝对路径。<br>
+示例: <code>pwd</code>。</li>
+<li><strong>mkdir</strong>: 创建新目录。<br>
+示例: <code>mkdir newfolder</code>。</li>
+<li><strong>rmdir</strong>: 删除空目录。<br>
+示例: <code>rmdir emptyfolder</code>。</li>
+<li><strong>touch</strong>: 创建空文件或更新文件时间戳。<br>
+示例: <code>touch file.txt</code>。</li>
+<li><strong>cp</strong>: 复制文件或目录。<br>
+示例: <code>cp file.txt /backup/</code>。</li>
+<li><strong>mv</strong>: 移动或重命名文件/目录。<br>
+示例: <code>mv oldname newname</code>。</li>
+<li><strong>rm</strong>: 删除文件或目录。<br>
+示例: <code>rm -r folder</code> (递归删除目录)。</li>
+<li><strong>find</strong>: 在目录中搜索文件。<br>
+示例: <code>find /home -name &quot;*.txt&quot;</code>。</li>
+</ul>
+<h4 id="2.-%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%BC%96%E8%BE%91%EF%BC%88file-viewing-%26-editing%EF%BC%89" tabindex="-1">2. 文件查看和编辑（File Viewing &amp; Editing）</h4>
+<ul>
+<li><strong>cat</strong>: 连接并显示文件内容。<br>
+示例: <code>cat file.txt</code>。</li>
+<li><strong>less</strong>: 分页查看文件内容（支持滚动）。<br>
+示例: <code>less largefile.log</code>。</li>
+<li><strong>more</strong>: 分页查看文件内容。<br>
+示例: <code>more file.txt</code>。</li>
+<li><strong>head</strong>: 显示文件前几行。<br>
+示例: <code>head -5 file.txt</code>。</li>
+<li><strong>tail</strong>: 显示文件后几行。<br>
+示例: <code>tail -f log.txt</code> (实时监控)。</li>
+<li><strong>nano</strong>: 简单文本编辑器。<br>
+示例: <code>nano file.txt</code>。</li>
+<li><strong>vim/vi</strong>: 高级文本编辑器。<br>
+示例: <code>vim file.txt</code>。</li>
+<li><strong>echo</strong>: 输出文本到终端或文件。<br>
+示例: <code>echo &quot;Hello&quot; &gt; file.txt</code>。</li>
+</ul>
+<h4 id="3.-%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%EF%BC%88permissions%EF%BC%89" tabindex="-1">3. 权限管理（Permissions）</h4>
+<ul>
+<li><strong>chmod</strong>: 修改文件/目录权限。<br>
+示例: <code>chmod 755 script.sh</code>。</li>
+<li><strong>chown</strong>: 更改文件所有者。<br>
+示例: <code>sudo chown user:group file.txt</code>。</li>
+<li><strong>su</strong>: 切换到超级用户（root）。<br>
+示例: <code>su -</code>。</li>
+<li><strong>sudo</strong>: 以管理员权限执行命令。<br>
+示例: <code>sudo apt update</code>。</li>
+</ul>
+<h4 id="4.-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%EF%BC%88process-management%EF%BC%89" tabindex="-1">4. 进程管理（Process Management）</h4>
+<ul>
+<li><strong>ps</strong>: 显示当前进程列表。<br>
+示例: <code>ps aux</code> (所有进程详细信息)。</li>
+<li><strong>top</strong>: 实时监控进程和系统资源。<br>
+示例: <code>top</code>。</li>
+<li><strong>htop</strong>: 交互式进程查看器（需安装）。<br>
+示例: <code>htop</code>。</li>
+<li><strong>kill</strong>: 终止指定进程。<br>
+示例: <code>kill 1234</code> (进程 ID 为 1234)。</li>
+<li><strong>pkill</strong>: 根据进程名终止进程。<br>
+示例: <code>pkill firefox</code>。</li>
+</ul>
+<h4 id="5.-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E5%92%8C%E7%9B%91%E6%8E%A7%EF%BC%88system-information%EF%BC%89" tabindex="-1">5. 系统信息和监控（System Information）</h4>
+<ul>
+<li><strong>uname</strong>: 显示系统信息。<br>
+示例: <code>uname -a</code> (所有细节)。</li>
+<li><strong>df</strong>: 显示磁盘使用情况。<br>
+示例: <code>df -h</code> (人类可读格式)。</li>
+<li><strong>du</strong>: 计算目录/文件占用空间。<br>
+示例: <code>du -sh /home</code>。</li>
+<li><strong>free</strong>: 显示内存使用情况。<br>
+示例: <code>free -h</code>。</li>
+<li><strong>uptime</strong>: 显示系统运行时间。<br>
+示例: <code>uptime</code>。</li>
+<li><strong>whoami</strong>: 显示当前用户名。<br>
+示例: <code>whoami</code>。</li>
+<li><strong>date</strong>: 显示或设置系统日期/时间。<br>
+示例: <code>date</code>。</li>
+<li><strong>cal</strong>: 显示日历。<br>
+示例: <code>cal</code>。</li>
+</ul>
+<h4 id="6.-%E5%8C%85%E7%AE%A1%E7%90%86%EF%BC%88package-management%EF%BC%89---ubuntu-%E4%B8%93%E5%B1%9E-apt" tabindex="-1">6. 包管理（Package Management） - Ubuntu 专属 APT</h4>
+<ul>
+<li><strong>apt update</strong>: 更新软件包列表。<br>
+示例: <code>sudo apt update</code>。</li>
+<li><strong>apt upgrade</strong>: 升级已安装软件包。<br>
+示例: <code>sudo apt upgrade</code>。</li>
+<li><strong>apt install</strong>: 安装软件包。<br>
+示例: <code>sudo apt install vim</code>。</li>
+<li><strong>apt remove</strong>: 卸载软件包。<br>
+示例: <code>sudo apt remove vim</code>。</li>
+<li><strong>apt search</strong>: 搜索软件包。<br>
+示例: <code>apt search nginx</code>。</li>
+<li><strong>apt autoremove</strong>: 移除无用依赖包。<br>
+示例: <code>sudo apt autoremove</code>。</li>
+<li><strong>snap install</strong>: 安装 Snap 包。<br>
+示例: <code>sudo snap install spotify</code>。</li>
+<li><strong>dpkg -l</strong>: 列出已安装的 deb 包。<br>
+示例: <code>dpkg -l | grep vim</code>。</li>
+</ul>
+<h4 id="7.-%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4%EF%BC%88networking%EF%BC%89" tabindex="-1">7. 网络命令（Networking）</h4>
+<ul>
+<li><strong>ping</strong>: 测试网络连通性。<br>
+示例: <code>ping google.com</code>。</li>
+<li><strong>ifconfig</strong>: 显示/配置网络接口（旧版）。<br>
+示例: <code>ifconfig</code>。</li>
+<li><strong>ip</strong>: 显示/配置网络接口（新版）。<br>
+示例: <code>ip addr show</code>。</li>
+<li><strong>curl</strong>: 从 URL 下载或发送数据。<br>
+示例: <code>curl https://example.com</code>。</li>
+<li><strong>wget</strong>: 下载文件。<br>
+示例: <code>wget https://file.zip</code>。</li>
+<li><strong>ssh</strong>: 安全远程登录。<br>
+示例: <code>ssh user@host</code>。</li>
+<li><strong>scp</strong>: 安全复制文件到远程主机。<br>
+示例: <code>scp file.txt user@host:/path</code>。</li>
+<li><strong>netstat</strong>: 显示网络连接（需安装 net-tools）。<br>
+示例: <code>netstat -tuln</code>。</li>
+<li><strong>ss</strong>: 显示套接字统计（现代版 netstat）。<br>
+示例: <code>ss -tuln</code>。</li>
+<li><strong>dig</strong>: DNS 查询工具。<br>
+示例: <code>dig example.com</code>。</li>
+</ul>
+<h4 id="8.-%E5%8E%8B%E7%BC%A9%E5%92%8C%E5%BD%92%E6%A1%A3%EF%BC%88compression-%26-archiving%EF%BC%89" tabindex="-1">8. 压缩和归档（Compression &amp; Archiving）</h4>
+<ul>
+<li><strong>tar</strong>: 创建/提取 tar 归档。<br>
+示例: <code>tar -czf archive.tar.gz folder/</code>。</li>
+<li><strong>gzip</strong>: 压缩文件。<br>
+示例: <code>gzip file.txt</code>。</li>
+<li><strong>gunzip</strong>: 解压 gz 文件。<br>
+示例: <code>gunzip file.txt.gz</code>。</li>
+<li><strong>zip</strong>: 创建 zip 归档。<br>
+示例: <code>zip archive.zip file.txt</code>。</li>
+<li><strong>unzip</strong>: 解压 zip 文件。<br>
+示例: <code>unzip archive.zip</code>。</li>
+</ul>
+<h4 id="9.-%E6%90%9C%E7%B4%A2%E5%92%8C%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%EF%BC%88search-%26-text-processing%EF%BC%89" tabindex="-1">9. 搜索和文本处理（Search &amp; Text Processing）</h4>
+<ul>
+<li><strong>grep</strong>: 在文件中搜索文本。<br>
+示例: <code>grep &quot;error&quot; log.txt</code>。</li>
+<li><strong>find</strong>: 搜索文件（见文件管理）。</li>
+<li><strong>locate</strong>: 快速搜索文件位置（需更新数据库）。<br>
+示例: <code>locate filename</code>。</li>
+<li><strong>which</strong>: 显示命令的可执行路径。<br>
+示例: <code>which ls</code>。</li>
+<li><strong>whereis</strong>: 查找命令的二进制、源和手册位置。<br>
+示例: <code>whereis ls</code>。</li>
+<li><strong>whatis</strong>: 显示命令的简短描述。<br>
+示例: <code>whatis ls</code>。</li>
+<li><strong>man</strong>: 显示命令的手册。<br>
+示例: <code>man ls</code>。</li>
+<li><strong>apropos</strong>: 根据关键词搜索命令。<br>
+示例: <code>apropos network</code>。</li>
+</ul>
+<h4 id="10.-%E6%9C%8D%E5%8A%A1%E5%92%8C%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%EF%BC%88services-%26-system-admin%EF%BC%89" tabindex="-1">10. 服务和系统管理（Services &amp; System Admin）</h4>
+<ul>
+<li><strong>service</strong>: 管理系统服务。<br>
+示例: <code>sudo service ssh start</code>。</li>
+<li><strong>systemctl</strong>: 管理 systemd 服务（现代版）。<br>
+示例: <code>sudo systemctl status ssh</code>。</li>
+<li><strong>reboot</strong>: 重启系统。<br>
+示例: <code>sudo reboot</code>。</li>
+<li><strong>shutdown</strong>: 关机或重启。<br>
+示例: <code>sudo shutdown -h now</code>。</li>
+<li><strong>history</strong>: 显示命令历史。<br>
+示例: <code>history</code>。</li>
+<li><strong>clear</strong>: 清空终端屏幕。<br>
+示例: <code>clear</code>。</li>
+<li><strong>alias</strong>: 创建命令别名。<br>
+示例: <code>alias ll='ls -la'</code>。</li>
+<li><strong>env</strong>: 显示当前环境变量。<br>
+示例: <code>env</code>。</li>
+<li><strong>export</strong>: 设置环境变量。<br>
+示例: <code>export PATH=$PATH:/newpath</code>。</li>
+</ul>
+<h4 id="11.-%E5%85%B6%E4%BB%96%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%EF%BC%88miscellaneous%EF%BC%89" tabindex="-1">11. 其他实用命令（Miscellaneous）</h4>
+<ul>
+<li><strong>bc</strong>: 命令行计算器。<br>
+示例: <code>echo &quot;2+2&quot; | bc</code>。</li>
+<li><strong>sort</strong>: 排序文件行。<br>
+示例: <code>sort file.txt</code>。</li>
+<li><strong>uniq</strong>: 去除重复行。<br>
+示例: <code>sort file.txt | uniq</code>。</li>
+<li><strong>wc</strong>: 统计行数/字数。<br>
+示例: <code>wc -l file.txt</code>。</li>
+<li><strong>diff</strong>: 比较两个文件差异。<br>
+示例: <code>diff file1.txt file2.txt</code>。</li>
+<li><strong>paste</strong>: 合并文件行。<br>
+示例: <code>paste file1.txt file2.txt</code>。</li>
+<li><strong>cut</strong>: 提取文件列。<br>
+示例: <code>cut -d',' -f1 csvfile.csv</code>。</li>
+<li><strong>tr</strong>: 转换/删除字符。<br>
+示例: <code>tr 'a-z' 'A-Z' &lt; file.txt</code>。</li>
+<li><strong>sed</strong>: 流编辑器，替换文本。<br>
+示例: <code>sed 's/old/new/g' file.txt</code>。</li>
+<li><strong>awk</strong>: 文本处理工具。<br>
+示例: <code>awk '&#123;print $1&#125;' file.txt</code> (打印第一列)。</li>
+</ul>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://borrowyourhuaji.github.io/2025/09/13/ubuntu-common-cmommand/" title="ubuntu common cmommand" target="_blank" rel="external">https://borrowyourhuaji.github.io/2025/09/13/ubuntu-common-cmommand/</a>
+    </li>
+    
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/4%20(1).gif" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">borrowyourhuaji</span><small class="ml-1x">😋</small></a></h3>
+        <div>ヾ(≧▽≦*)o</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2025/09/13/ubuntu-services-cmommand/" title="ubuntu services cmommand"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2025/09/13/%E6%95%B0%E4%BD%8Ddp/" title="数位dp"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
