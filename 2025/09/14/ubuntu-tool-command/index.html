@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>tool command | meow~</title>
+  <meta name="description" content="1. grep 工具详解 grep（Global Regular Expression Print）是 Linux 中用于搜索文本的强大工具，通过正则表达式或固定字符串匹配文件内容或标准输入，输出匹配的行。它在文件查看、日志分析、数据过滤等场景中广泛使用。 1.1 功能  搜索文本: 在文件或标准输入中查找匹配指定模式（pattern）的行。 支持正则表达式: 使用正则表达式匹配复杂模式。 变体:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tool command">
+<meta property="og:url" content="https://borrowyourhuaji.github.io/2025/09/14/ubuntu-tool-command/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. grep 工具详解 grep（Global Regular Expression Print）是 Linux 中用于搜索文本的强大工具，通过正则表达式或固定字符串匹配文件内容或标准输入，输出匹配的行。它在文件查看、日志分析、数据过滤等场景中广泛使用。 1.1 功能  搜索文本: 在文件或标准输入中查找匹配指定模式（pattern）的行。 支持正则表达式: 使用正则表达式匹配复杂模式。 变体:">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-09-14T05:56:52.000Z">
+<meta property="article:modified_time" content="2025-09-14T05:58:13.781Z">
+<meta property="article:author" content="borrowyourhuaji">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://borrowyourhuaji.github.io/2025/09/14/ubuntu-tool-command/index.html">
+  
+  
+    <link rel="icon" href="/favicon.gif" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/images/4%20(1).gif" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">borrowyourhuaji</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">😋</h3>
+        <small id="sign" class="text-muted hidden-xs hidden-sm"> 时而滑稽之，不亦说乎？</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <img src="/favicon.gif" alt="?">
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/service/" rel="tag">service</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/" rel="tag">文档、库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/service/" style="font-size: 13.5px;">service</a> <a href="/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/" style="font-size: 13px;">文档、库</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px;">算法</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/14/ubuntu-tool-command/" class="title">tool command</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-14T05:56:52.000Z" itemprop="datePublished">2025-09-14</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/ubuntu-services-cmommand/" class="title">ubuntu services cmommand</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T15:42:12.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/ubuntu-common-cmommand/" class="title">ubuntu common cmommand</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T15:37:46.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/%E6%95%B0%E4%BD%8Ddp/" class="title">数位dp</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T15:00:51.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/09/13/yolo/" class="title">yolo</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-09-13T13:57:08.000Z" itemprop="datePublished">2025-09-13</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-ubuntu-tool-command" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tool command
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/09/14/ubuntu-tool-command/" class="article-date">
+	  <time datetime="2025-09-14T05:56:52.000Z" itemprop="datePublished">2025-09-14</time>
+	</a>
+</span>
+        
+        
+
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="1.-grep-%E5%B7%A5%E5%85%B7%E8%AF%A6%E8%A7%A3" tabindex="-1">1. grep 工具详解</h3>
+<p><strong>grep</strong>（Global Regular Expression Print）是 Linux 中用于搜索文本的强大工具，通过正则表达式或固定字符串匹配文件内容或标准输入，输出匹配的行。它在文件查看、日志分析、数据过滤等场景中广泛使用。</p>
+<h4 id="1.1-%E5%8A%9F%E8%83%BD" tabindex="-1">1.1 功能</h4>
+<ul>
+<li><strong>搜索文本</strong>: 在文件或标准输入中查找匹配指定模式（pattern）的行。</li>
+<li><strong>支持正则表达式</strong>: 使用正则表达式匹配复杂模式。</li>
+<li><strong>变体</strong>: 包括 <code>egrep</code>（扩展正则表达式）、<code>fgrep</code>（固定字符串匹配）、<code>rgrep</code>（递归搜索）。</li>
+<li><strong>灵活性</strong>: 可结合管道（<code>|</code>）处理其他命令的输出。</li>
+</ul>
+<h4 id="1.2-%E8%AF%AD%E6%B3%95" tabindex="-1">1.2 语法</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [选项] 模式 [文件...]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>模式</strong>: 要搜索的字符串或正则表达式。</li>
+<li><strong>文件</strong>: 一个或多个文件路径，若省略则从标准输入读取。</li>
+<li><strong>选项</strong>: 控制搜索行为、输出格式等。</li>
+</ul>
+<h4 id="1.3-%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9" tabindex="-1">1.3 常用选项</h4>
+<p>以下是 <code>grep</code> 的常用选项，分为搜索控制、输出格式和上下文控制三类：</p>
+<p><strong>搜索控制</strong>:</p>
+<ul>
+<li><code>-i</code>, <code>--ignore-case</code>: 忽略大小写。<br>
+示例: <code>grep -i &quot;error&quot; log.txt</code>（匹配 “Error” 或 “ERROR”）。</li>
+<li><code>-w</code>, <code>--word-regexp</code>: 仅匹配完整单词（避免部分匹配）。<br>
+示例: <code>grep -w &quot;run&quot; script.sh</code>（匹配 “run” 但不匹配 “running”）。</li>
+<li><code>-v</code>, <code>--invert-match</code>: 输出不匹配的行。<br>
+示例: <code>grep -v &quot;^#&quot; config.conf</code>（排除以 <code>#</code> 开头的注释行）。</li>
+<li><code>-r</code>, <code>--recursive</code>: 递归搜索目录中的所有文件。<br>
+示例: <code>grep -r &quot;TODO&quot; /project/</code>（搜索 <code>/project/</code> 目录下包含 “TODO” 的文件）。</li>
+<li><code>-l</code>, <code>--files-with-matches</code>: 仅输出包含匹配的文件名。<br>
+示例: <code>grep -l &quot;error&quot; *.log</code>（列出包含 “error” 的日志文件）。</li>
+<li><code>-L</code>, <code>--files-without-match</code>: 输出不包含匹配的文件名。<br>
+示例: <code>grep -L &quot;error&quot; *.log</code>。</li>
+<li><code>-e 模式</code>, <code>--regexp=模式</code>: 指定多个模式（可多次使用）。<br>
+示例: <code>grep -e &quot;error&quot; -e &quot;warning&quot; log.txt</code>（匹配 “error” 或 “warning”）。</li>
+<li><code>-E</code>, <code>--extended-regexp</code>: 使用扩展正则表达式（等同 <code>egrep</code>）。<br>
+示例: <code>grep -E &quot;error|warning&quot; log.txt</code>。</li>
+<li><code>-F</code>, <code>--fixed-strings</code>: 按固定字符串匹配（等同 <code>fgrep</code>，禁用正则）。<br>
+示例: <code>grep -F &quot;http://&quot; urls.txt</code>（匹配字面字符串 “http://”）。</li>
+<li><code>-P</code>, <code>--perl-regexp</code>: 使用 Perl 兼容正则表达式（需支持）。<br>
+示例: <code>grep -P &quot;\d+&quot; numbers.txt</code>（匹配数字）。</li>
+</ul>
+<p><strong>输出格式</strong>:</p>
+<ul>
+<li><code>-n</code>, <code>--line-number</code>: 显示匹配行的行号。<br>
+示例: <code>grep -n &quot;error&quot; log.txt</code>。</li>
+<li><code>-c</code>, <code>--count</code>: 输出匹配行的数量。<br>
+示例: <code>grep -c &quot;error&quot; log.txt</code>。</li>
+<li><code>-o</code>, <code>--only-matching</code>: 仅输出匹配的部分（而非整行）。<br>
+示例: <code>grep -o &quot;[0-9]+&quot; data.txt</code>（提取所有数字）。</li>
+<li><code>--color</code>: 高亮显示匹配内容（默认自动启用）。<br>
+示例: <code>grep --color &quot;error&quot; log.txt</code>。</li>
+<li><code>-b</code>, <code>--byte-offset</code>: 显示匹配内容的字节偏移量。<br>
+示例: <code>grep -b &quot;key&quot; file.txt</code>。</li>
+</ul>
+<p><strong>上下文控制</strong>:</p>
+<ul>
+<li><code>-A 行数</code>, <code>--after-context=行数</code>: 显示匹配行后的指定行数。<br>
+示例: <code>grep -A 2 &quot;error&quot; log.txt</code>（显示匹配行及后两行）。</li>
+<li><code>-B 行数</code>, <code>--before-context=行数</code>: 显示匹配行前的指定行数。<br>
+示例: <code>grep -B 2 &quot;error&quot; log.txt</code>。</li>
+<li><code>-C 行数</code>, <code>--context=行数</code>: 显示匹配行前后各指定行数。<br>
+示例: <code>grep -C 2 &quot;error&quot; log.txt</code>。</li>
+</ul>
+<h4 id="1.4-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF" tabindex="-1">1.4 使用场景</h4>
+<ul>
+<li><strong>日志分析</strong>: 查找错误或特定事件（如 <code>grep &quot;ERROR&quot; /var/log/syslog</code>）。</li>
+<li><strong>配置文件筛选</strong>: 提取非注释行或特定配置项。</li>
+<li><strong>代码搜索</strong>: 在源代码中查找函数或关键字。</li>
+<li><strong>数据处理</strong>: 结合管道过滤命令输出（如 <code>ps aux | grep python</code>）。</li>
+</ul>
+<h4 id="1.5-%E7%A4%BA%E4%BE%8B" tabindex="-1">1.5 示例</h4>
+<ul>
+<li>
+<p>基本搜索：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;error&quot; /var/log/syslog</span><br></pre></td></tr></table></figure>
+<p>输出 <code>syslog</code> 中包含 “error” 的行。</p>
+</li>
+<li>
+<p>忽略大小写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -i &quot;warning&quot; log.txt</span><br></pre></td></tr></table></figure>
+<p>匹配 “Warning” 或 “WARNING”。</p>
+</li>
+<li>
+<p>递归搜索目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r &quot;TODO&quot; /home/user/project/</span><br></pre></td></tr></table></figure>
+<p>在项目目录下查找所有包含 “TODO” 的文件。</p>
+</li>
+<li>
+<p>显示行号和上下文：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -n -C 3 &quot;exception&quot; app.log</span><br></pre></td></tr></table></figure>
+<p>显示包含 “exception” 的行、行号及前后各 3 行。</p>
+</li>
+<li>
+<p>提取匹配部分：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -o &quot;[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;&quot; log.txt</span><br></pre></td></tr></table></figure>
+<p>提取日志中的 IP 地址。</p>
+</li>
+<li>
+<p>结合管道：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep -i &quot;firefox&quot;</span><br></pre></td></tr></table></figure>
+<p>查找运行中的 Firefox 进程。</p>
+</li>
+<li>
+<p>多个模式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -e &quot;error&quot; -e &quot;fail&quot; log.txt</span><br></pre></td></tr></table></figure>
+<p>匹配包含 “error” 或 “fail” 的行。</p>
+</li>
+</ul>
+<h4 id="1.6-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80" tabindex="-1">1.6 正则表达式基础</h4>
+<p><code>grep</code> 默认使用基本正则表达式（BRE），<code>-E</code> 启用扩展正则表达式（ERE），<code>-P</code> 启用 Perl 正则表达式。常用正则语法：</p>
+<ul>
+<li><code>.</code>: 任意单个字符。</li>
+<li><code>*</code>: 前字符 0 次或多次。</li>
+<li><code>+</code>: 前字符 1 次或多次（需 <code>-E</code> 或 <code>-P</code>）。</li>
+<li><code>?</code>: 前字符 0 次或 1 次（需 <code>-E</code> 或 <code>-P</code>）。</li>
+<li><code>[]</code>: 字符集，如 <code>[a-z]</code> 匹配小写字母。</li>
+<li><code>^</code>: 行首。</li>
+<li><code>$</code>: 行尾。</li>
+<li><code>|</code>: 或操作（如 <code>error|warning</code>，需 <code>-E</code>）。</li>
+<li><code>\d</code>: 数字（需 <code>-P</code>）。</li>
+<li><code>\w</code>: 单词字符（需 <code>-P</code>）。</li>
+</ul>
+<p><strong>示例</strong>:</p>
+<ul>
+<li><code>grep &quot;^[A-Z]&quot; file.txt</code>: 匹配以大写字母开头的行。</li>
+<li><code>grep -E &quot;error|warning&quot; log.txt</code>: 匹配 “error” 或 “warning”。</li>
+<li><code>grep -P &quot;\d&#123;3&#125;-\d&#123;2&#125;-\d&#123;4&#125;&quot; data.txt</code>: 匹配类似 “123-45-6789” 的模式。</li>
+</ul>
+<h4 id="1.7-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95" tabindex="-1">1.7 高级用法</h4>
+<ul>
+<li>
+<p><strong>结合 <code>find</code></strong>: 搜索特定类型文件中的内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /var/log -name &quot;*.log&quot; -exec grep &quot;error&quot; &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<p>在所有 <code>.log</code> 文件中搜索 “error”。</p>
+</li>
+<li>
+<p><strong>管道过滤</strong>: 处理复杂输出。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dmesg | grep -i &quot;usb&quot; | grep -v &quot;disconnected&quot;</span><br></pre></td></tr></table></figure>
+<p>查找 USB 相关消息，排除 “disconnected”。</p>
+</li>
+<li>
+<p><strong>统计匹配</strong>: 计算特定模式出现次数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -c &quot;GET&quot; access.log</span><br></pre></td></tr></table></figure>
+<p>统计 HTTP GET 请求次数。</p>
+</li>
+<li>
+<p><strong>脚本化</strong>: 在 shell 脚本中动态搜索。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> grep -q <span class="string">&quot;error&quot;</span> log.txt; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Error found!&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p><code>-q</code> 选项静默检查是否存在匹配。</p>
+</li>
+</ul>
+<h4 id="1.8-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" tabindex="-1">1.8 注意事项</h4>
+<ul>
+<li><strong>性能</strong>: 对大文件或目录递归搜索（<code>-r</code>）可能较慢，考虑使用 <code>fgrep</code>（固定字符串）或 <code>ripgrep</code>（见下文）。</li>
+<li><strong>正则表达式转义</strong>: 特殊字符（如 <code>.</code>、<code>*</code>）需用 <code>\</code> 转义（除非用 <code>-F</code>）。</li>
+<li><strong>权限</strong>: 搜索系统文件（如 <code>/var/log</code>）可能需 <code>sudo</code>。</li>
+<li><strong>编码</strong>: 非 ASCII 文件可能需指定编码（如 <code>LC_ALL=C grep ...</code>）。</li>
+</ul>
+<hr>
+<h3 id="2.-grep-%E5%8F%98%E4%BD%93" tabindex="-1">2. grep 变体</h3>
+<p><code>grep</code> 有以下变体，功能类似但侧重点不同：</p>
+<ul>
+<li>
+<p><strong>egrep</strong><br>
+<strong>功能</strong>: 等同于 <code>grep -E</code>，使用扩展正则表达式（ERE），无需转义 <code>|</code>、<code>+</code> 等。<br>
+<strong>语法</strong>: <code>egrep [选项] 模式 [文件...]</code><br>
+<strong>场景</strong>: 需要复杂正则表达式（如 <code>error|warning</code>）时。<br>
+<strong>示例</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep &quot;error|warning&quot; log.txt</span><br></pre></td></tr></table></figure>
+<p>匹配 “error” 或 “warning”。<br>
+<strong>注意</strong>: <code>egrep</code> 是 <code>grep -E</code> 的别名，现代系统中建议直接用 <code>grep -E</code>。</p>
+</li>
+<li>
+<p><strong>fgrep</strong><br>
+<strong>功能</strong>: 等同于 <code>grep -F</code>，按固定字符串匹配，不解析正则表达式，速度更快。<br>
+<strong>语法</strong>: <code>fgrep [选项] 字符串 [文件...]</code><br>
+<strong>场景</strong>: 搜索字面字符串（如 URL 或代码片段）无需正则。<br>
+<strong>示例</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fgrep &quot;http://&quot; urls.txt</span><br></pre></td></tr></table></figure>
+<p>匹配字面字符串 “http://”。<br>
+<strong>注意</strong>: 适合搜索特殊字符，避免转义麻烦。</p>
+</li>
+<li>
+<p><strong>rgrep</strong><br>
+<strong>功能</strong>: 等同于 <code>grep -r</code>，递归搜索目录中的文件。<br>
+<strong>语法</strong>: <code>rgrep [选项] 模式 [目录...]</code><br>
+<strong>场景</strong>: 搜索项目目录中的代码或配置文件。<br>
+<strong>示例</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgrep &quot;TODO&quot; /home/user/project/</span><br></pre></td></tr></table></figure>
+<p>递归搜索包含 “TODO” 的文件。<br>
+<strong>注意</strong>: <code>rgrep</code> 是 <code>grep -r</code> 的别名，建议用 <code>grep -r</code>。</p>
+</li>
+</ul>
+<hr>
+<h3 id="3.-%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7" tabindex="-1">3. 相关工具</h3>
+<p>以下工具与 <code>grep</code> 常结合使用，扩展文件查看和编辑功能，简要讲解其语法和用途。</p>
+<h4 id="3.1-sed%EF%BC%88stream-editor%EF%BC%89" tabindex="-1">3.1 sed（Stream Editor）</h4>
+<p><strong>功能</strong>: 流编辑器，用于文本替换、删除、插入等操作，适合批量处理。<br>
+<strong>语法</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed [选项] &#x27;命令&#x27; [文件...]</span><br></pre></td></tr></table></figure>
+<p><strong>常用选项</strong>:</p>
+<ul>
+<li><code>-i</code>: 直接修改原文件（建议备份，如 <code>-i.bak</code>）。</li>
+<li><code>-e</code>: 执行多个命令。</li>
+<li><code>-r</code>: 使用扩展正则表达式。<br>
+<strong>常用命令</strong>:</li>
+<li><code>s/模式/替换/g</code>: 全局替换。</li>
+<li><code>d</code>: 删除匹配行。</li>
+<li><code>p</code>: 打印匹配行。<br>
+<strong>示例</strong>:</li>
+<li><code>sed 's/error/warning/g' log.txt</code>: 将 “error” 替换为 “warning”。</li>
+<li><code>sed -i.bak '/^#/d' config.txt</code>: 删除注释行并备份原文件。</li>
+<li><code>sed '10,20d' data.txt</code>: 删除第 10 到 20 行。<br>
+<strong>与 grep 结合</strong>:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;error&quot; log.txt | sed &#x27;s/error/ERROR/g&#x27;</span><br></pre></td></tr></table></figure>
+<p>筛选 “error” 行并将其改为 “ERROR”。<br>
+<strong>场景</strong>: 批量修改配置文件、清理日志。</p>
+<h4 id="3.2-awk" tabindex="-1">3.2 awk</h4>
+<p><strong>功能</strong>: 文本处理工具，适合处理结构化数据（如 CSV、日志），支持字段提取和计算。<br>
+<strong>语法</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk [选项] &#x27;程序&#x27; [文件...]</span><br></pre></td></tr></table></figure>
+<p><strong>常用选项</strong>:</p>
+<ul>
+<li><code>-F 分隔符</code>: 指定字段分隔符（如 <code>','</code>）。</li>
+<li><code>-v 变量=值</code>: 定义变量。<br>
+<strong>常用程序</strong>:</li>
+<li><code>&#123;print $n&#125;</code>: 打印第 n 列。</li>
+<li><code>/模式/ &#123;动作&#125;</code>: 对匹配模式执行动作。</li>
+<li><code>BEGIN &#123;动作&#125;</code>: 文件处理前执行。</li>
+<li><code>END &#123;动作&#125;</code>: 文件处理后执行。<br>
+<strong>示例</strong>:</li>
+<li><code>awk -F',' '&#123;print $1&#125;' data.csv</code>: 打印 CSV 第一列。</li>
+<li><code>awk '/error/ &#123;print&#125;' log.txt</code>: 打印包含 “error” 的行。</li>
+<li><code>awk '&#123;sum+=$2&#125; END &#123;print sum&#125;' numbers.txt</code>: 计算第二列总和。<br>
+<strong>与 grep 结合</strong>:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;error&quot; log.txt | awk &#x27;&#123;print $1, $3&#125;&#x27;</span><br></pre></td></tr></table></figure>
+<p>筛选 “error” 行并打印第一和第三列。<br>
+<strong>场景</strong>: 提取日志字段、统计数据。</p>
+<h4 id="3.3-ripgrep-(rg)" tabindex="-1">3.3 ripgrep (rg)</h4>
+<p><strong>功能</strong>: 现代高性能搜索工具，类似 <code>grep</code> 但更快，支持更多功能（需安装 <code>sudo apt install ripgrep</code>）。<br>
+<strong>语法</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rg [选项] 模式 [路径]</span><br></pre></td></tr></table></figure>
+<p><strong>常用选项</strong>:</p>
+<ul>
+<li><code>-i</code>: 忽略大小写。</li>
+<li><code>-w</code>: 匹配完整单词。</li>
+<li><code>-g 模式</code>: 按文件名模式过滤（如 <code>*.py</code>）。</li>
+<li><code>--no-heading</code>: 不显示文件名标题。</li>
+<li><code>--files</code>: 仅列出匹配文件。<br>
+<strong>场景</strong>: 大型项目代码搜索、快速日志分析。<br>
+<strong>示例</strong>:</li>
+<li><code>rg &quot;TODO&quot; /project/</code>: 递归搜索 “TODO”。</li>
+<li><code>rg -i &quot;error&quot; *.log</code>: 在日志文件中搜索 “error”。</li>
+<li><code>rg -g &quot;*.py&quot; &quot;def&quot;</code>: 在 Python 文件中搜索函数定义。<br>
+<strong>与 grep 的区别</strong>:</li>
+<li>更快：利用多线程和优化算法。</li>
+<li>默认递归且忽略 <code>.git</code> 等隐藏目录。</li>
+<li>更智能：支持复杂正则和文件类型过滤。<br>
+<strong>注意</strong>: <code>ripgrep</code> 需安装，适合高性能场景。</li>
+</ul>
+<hr>
+<h3 id="4.-%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E7%A4%BA%E4%BE%8B" tabindex="-1">4. 高级使用场景与示例</h3>
+<p>以下展示 <code>grep</code> 及相关工具在实际任务中的组合应用：</p>
+<ol>
+<li>
+<p><strong>日志分析</strong>:</p>
+<ul>
+<li>查找最近 10 分钟的错误日志：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 1000 /var/log/syslog | grep &quot;error&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li>提取错误相关的 IP 地址：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;error&quot; log.txt | grep -o &quot;[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>批量修改配置文件</strong>:</p>
+<ul>
+<li>删除所有注释行并替换关键字：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -v &quot;^#&quot; config.txt | sed &#x27;s/server/host/g&#x27; &gt; newconfig.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>统计特定模式</strong>:</p>
+<ul>
+<li>计算 HTTP 请求类型：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -E &quot;GET|POST&quot; access.log | awk &#x27;&#123;print $6&#125;&#x27; | sort | uniq -c</span><br></pre></td></tr></table></figure>
+输出每种请求类型的出现次数。</li>
+</ul>
+</li>
+<li>
+<p><strong>代码搜索与清理</strong>:</p>
+<ul>
+<li>查找所有 Python 文件中的 TODO：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rg -g &quot;*.py&quot; &quot;TODO&quot; /project/</span><br></pre></td></tr></table></figure>
+</li>
+<li>替换代码中的旧变量名：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /project -name &quot;*.py&quot; -exec sed -i &#x27;s/old_var/new_var/g&#x27; &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>实时监控与过滤</strong>:</p>
+<ul>
+<li>实时监控错误日志并提取时间戳：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /var/log/syslog | grep &quot;error&quot; | awk &#x27;&#123;print $1, $2, $3&#125;&#x27;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="5.-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E4%B8%8E%E6%89%A9%E5%B1%95" tabindex="-1">5. 注意事项与扩展</h3>
+<ol>
+<li><strong>性能优化</strong>:
+<ul>
+<li>使用 <code>fgrep</code> 或 <code>ripgrep</code> 处理固定字符串搜索以提高速度。</li>
+<li>限制搜索范围（如 <code>grep -r &quot;pattern&quot; /specific/dir</code>）避免全盘扫描。</li>
+</ul>
+</li>
+<li><strong>正则表达式调试</strong>:
+<ul>
+<li>测试复杂正则表达式时，先用 <code>grep -o</code> 查看匹配部分。</li>
+<li>使用工具如 <code>regex101.com</code> 验证正则语法。</li>
+</ul>
+</li>
+<li><strong>权限问题</strong>:
+<ul>
+<li>搜索系统文件（如 <code>/var/log</code>）可能需 <code>sudo</code>，如 <code>sudo grep &quot;error&quot; /var/log/secure</code>.</li>
+</ul>
+</li>
+<li><strong>编码问题</strong>:
+<ul>
+<li>处理非 ASCII 文件时，可能需设置 <code>LC_ALL=C</code>。</li>
+<li>示例: <code>LC_ALL=C grep &quot;pattern&quot; file.txt</code>.</li>
+</ul>
+</li>
+<li><strong>学习资源</strong>:
+<ul>
+<li>查看手册：<code>man grep</code>, <code>man sed</code>, <code>man awk</code>。</li>
+<li>安装 <code>tldr</code>（<code>sudo apt install tldr</code>）获取简明示例。</li>
+<li>在线教程：如 DigitalOcean 的 grep 指南或 Ubuntu 社区文档。</li>
+</ul>
+</li>
+<li><strong>替代工具</strong>:
+<ul>
+<li><strong>ripgrep (rg)</strong>: 更快、更现代，适合大型项目。</li>
+<li><strong>ack</strong>: 面向开发者的搜索工具，专注于代码。</li>
+<li><strong>ag (silversearcher)</strong>: 类似 <code>ripgrep</code>，高性能搜索。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://borrowyourhuaji.github.io/2025/09/14/ubuntu-tool-command/" title="tool command" target="_blank" rel="external">https://borrowyourhuaji.github.io/2025/09/14/ubuntu-tool-command/</a>
+    </li>
+    
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/4%20(1).gif" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">borrowyourhuaji</span><small class="ml-1x">😋</small></a></h3>
+        <div>ヾ(≧▽≦*)o</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/09/13/ubuntu-services-cmommand/" title="ubuntu services cmommand"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
