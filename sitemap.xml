@@ -4,7 +4,16 @@
   <url>
     <loc>https://borrowyourhuaji.github.io/2025/09/13/ubuntu-services-cmommand/</loc>
     
-    <lastmod>2025-09-13</lastmod>
+    <lastmod>2025-09-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://borrowyourhuaji.github.io/2025/09/13/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
+    
+    <lastmod>2025-09-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -46,19 +55,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://borrowyourhuaji.github.io/2025/09/13/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
-    
-    <lastmod>2025-09-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://borrowyourhuaji.github.io/</loc>
-    <lastmod>2025-09-13</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,21 +66,21 @@
   
   <url>
     <loc>https://borrowyourhuaji.github.io/tags/service/</loc>
-    <lastmod>2025-09-13</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://borrowyourhuaji.github.io/tags/%E6%96%87%E6%A1%A3%E3%80%81%E5%BA%93/</loc>
-    <lastmod>2025-09-13</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://borrowyourhuaji.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2025-09-13</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
